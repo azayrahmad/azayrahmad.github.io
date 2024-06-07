@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![alt text](<about.jpg>)
+![Picture of Aziz with his wife and their lovely daughter](<aboutpic.jpg>)
 
 Hey there! I'm Aziz Rahmad, a software engineer with a knack for creating innovative enterprise software solutions. With over seven years in the industry, I've had the pleasure of developing and supporting complex systems for clients across Indonesia, Australia, and New Zealand.
 
