@@ -1,0 +1,92 @@
+---
+layout: page
+title: Resume
+permalink: /resume/
+---
+---
+
+# Aziz Rahmad
+
+**Address:** Jl Tukad Batu Agung I No 23B, Panjer, Denpasar, Bali, Indonesia 80225  
+**Phone:** +62 852 1752 0879  
+**Email:** azayrahmad@gmail.com  
+**LinkedIn:** [linkedin.com/in/aziz-rahmad](https://linkedin.com/in/aziz-rahmad)
+
+---
+
+## Professional Summary
+
+Experienced software developer with a proven track record in developing and supporting enterprise software solutions for diverse markets including Indonesia, Australia, and New Zealand. Professional English proficiency with a demonstrated history of collaborating in multinational teams. Strong academic foundation holding a master's degree in computer science and experienced in delivering lectures at universities and schools.
+
+---
+
+## Experience
+
+**Analyst Programmer | Mitrais, Bali, Indonesia**  
+*October 2017 – Present*  
+- Develop high-quality software solutions.
+- Create data-driven solutions for various clients.
+- Collaborate within cross-functional, international agile teams.
+- Test, debug, re-test, and coordinate with QA to validate software readiness.
+- Review code and provide expertise to junior team members.
+
+**Part-time Lecturer | Primakara University, Bali, Indonesia**  
+*February 2022 – Present*  
+- Deliver lectures on Computer Science topics such as Programming Basics, Data Structures & Algorithms, Database Systems, and Expert Systems.
+
+**Software Consultant | CODE.ID, Jakarta, Indonesia**  
+*November 2015 – October 2017*  
+- Design, code, test, and manage various applications.
+- Collaborate with engineering and product teams to develop best products.
+- Adhere to quality standards for code and systems.
+- Develop automated tests and conduct performance tuning.
+
+---
+
+## Education
+
+**Master of Computer Science | Bogor Agricultural University**  
+*2012 – 2015*  
+- Relevant coursework: Algorithm Analysis & Design, Advanced Software Development
+- Graduated Cum Laude with a GPA of 3.69/4.00
+
+---
+
+## Skills
+
+- **Programming Languages:** .NET Framework, .NET Core, C#, VB .NET
+- **Databases:** MS SQL Server, PostgreSQL, Oracle
+- **Tools:** Git, Crystal Report, SSRS
+- **Methodologies:** Agile Methodologies, Scrum
+- **Testing:** Unit Test, Regression Test
+- **CI/CD:** Continuous Integration, Continuous Delivery
+- **Languages:** Professional English
+
+---
+
+## Projects
+
+**Human Resource Management System (HRMS)**  
+*December 2023 – Present*  
+- Developed and maintained an HRMS product with a focus on CI/CD.
+- Acted as Scrum Master on rotation.
+
+**Enterprise Suite – Human Resources & Payroll | Mitrais**  
+*October 2017 – December 2023*  
+- Supported client enterprise solutions by fixing bugs, testing, and enhancing the HR and Payroll module for diverse clients in Australia, New Zealand, and Great Britain.
+- Implemented Australian STP & STP Phase 2.
+- Converted project from VB .NET to C#.
+
+**Tax Automation | CODE.ID**  
+*September 2016 – September 2017*  
+- Developed new modules for the Tax Automation web application for a major Indonesian bank.
+- Notable modules: Corporate Tax (manages fiscal reports), Accrual & Prepayment (manages accrual and amortization calculation).
+
+**Employee Connection | CODE.ID**  
+*September 2016 – September 2017*  
+- Developed new modules for the Employee Connection web application for a major Indonesian bank.
+- Notable modules: Industrial Relations (manages instances of company rule violations and low performance records).
+
+---
+
+Feel free to reach out via [LinkedIn](https://linkedin.com/in/aziz-rahmad) or email at azayrahmad@gmail.com.
