@@ -3,16 +3,6 @@ layout: page
 title: Resume
 permalink: /resume/
 ---
----
-
-# Aziz Rahmad
-
-**Address:** Jl Tukad Batu Agung I No 23B, Panjer, Denpasar, Bali, Indonesia 80225  
-**Phone:** +62 852 1752 0879  
-**Email:** azayrahmad@gmail.com  
-**LinkedIn:** [linkedin.com/in/aziz-rahmad](https://linkedin.com/in/aziz-rahmad)
-
----
 
 ## Professional Summary
 
@@ -23,8 +13,16 @@ Experienced software developer with a proven track record in developing and supp
 ## Experience
 
 **Lecturer | Primakara University, Bali, Indonesia**  
-*February 2022 – Present*  
-- Deliver lectures on Computer Science topics such as Programming Basics, Data Structures & Algorithms, Database Systems, and Expert Systems.
+*February 2022 – Present*
+
+Responsibilities:
+- Deliver lectures on Computer Science topics.
+
+Course delivered:
+- Basics of Programming
+- Data Structures & Algorithms
+- Database Systems
+- Expert Systems. 
 
 **Analyst Programmer | Mitrais, Bali, Indonesia**  
 *October 2017 – April 2024*  

@@ -12,7 +12,7 @@ layout: home
   }
   h1 {
     margin: 30px 0;
-    font-size: 4em;
+    font-size: 6em;
     line-height: 1;
     letter-spacing: -1px;
   }
@@ -20,8 +20,5 @@ layout: home
 
 <div class="container">
   <h1><b>aziz</b> rahmad</h1>
-
-  <p><strong>Software Engineer. Teacher. Web Enthusiast.</strong></p>
-  <p>Welcome to my portfolio website!</p>
+  <h2>Software Engineer. Teacher. Web Enthusiast.</h2>
 </div>
-
