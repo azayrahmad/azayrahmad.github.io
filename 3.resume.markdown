@@ -22,17 +22,17 @@ Experienced software developer with a proven track record in developing and supp
 
 ## Experience
 
+**Lecturer | Primakara University, Bali, Indonesia**  
+*February 2022 – Present*  
+- Deliver lectures on Computer Science topics such as Programming Basics, Data Structures & Algorithms, Database Systems, and Expert Systems.
+
 **Analyst Programmer | Mitrais, Bali, Indonesia**  
-*October 2017 – Present*  
+*October 2017 – April 2024*  
 - Develop high-quality software solutions.
 - Create data-driven solutions for various clients.
 - Collaborate within cross-functional, international agile teams.
 - Test, debug, re-test, and coordinate with QA to validate software readiness.
 - Review code and provide expertise to junior team members.
-
-**Part-time Lecturer | Primakara University, Bali, Indonesia**  
-*February 2022 – Present*  
-- Deliver lectures on Computer Science topics such as Programming Basics, Data Structures & Algorithms, Database Systems, and Expert Systems.
 
 **Software Consultant | CODE.ID, Jakarta, Indonesia**  
 *November 2015 – October 2017*  

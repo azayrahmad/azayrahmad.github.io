@@ -4,9 +4,6 @@
 
 layout: home
 ---
-
-![alt text](<OIG2.sRzARlL0UnasjX17H.jpeg>)
-
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
@@ -24,7 +21,7 @@ layout: home
 <div class="container">
   <h1><b>aziz</b> rahmad</h1>
 
-  <p><strong>Software Engineer. Teacher. AI Enthusiast.</strong></p>
+  <p><strong>Software Engineer. Teacher. Web Enthusiast.</strong></p>
   <p>Welcome to my portfolio website!</p>
 </div>
 
