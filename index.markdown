@@ -22,7 +22,7 @@ layout: home
 </style>
 
 <div class="container">
-  <h1>Aziz Rahmad</h1>
+  <h1><b>aziz</b> rahmad</h1>
 
   <p><strong>Software Engineer. Teacher. AI Enthusiast.</strong></p>
   <p>Welcome to my portfolio website!</p>
