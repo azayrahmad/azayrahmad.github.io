@@ -23,7 +23,7 @@ author:
   name: Aziz Rahmad
   email: azayrahmad@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  software engineer specializing in web development with Microsoft. a lecturer of computer science topics.
+  thoughts on software engineering, computer science, and life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://azayrahmad.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 timezone: Asia/Makassar

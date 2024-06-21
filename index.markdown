@@ -7,23 +7,25 @@ layout: home
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
-    text-align: center;
+    text-align: right;
   }
   h1 {
     margin: 30px 0;
     font-size: 6em;
     line-height: 1;
-    letter-spacing: -1px;
+    letter-spacing: -3px;
   }
-  h2 {
+  .subtitle {
     margin: 30px 0;
     font-size: 2em;
-    line-height: 1;
-    letter-spacing: 5px;
+    line-height: 1.5;
+    letter-spacing: -2px;
   }
 </style>
 
 <div class="container">
-  <h1><b>aziz</b> rahmad</h1>
-  <h2>software engineer | lecturer | problem solver</h2>
+  <h1><strong><a href="/about">aziz</a></strong> rahmad</h1>
+  <p class="subtitle"><a href="/projects">SOFTWARE ENGINEER</a> SPECIALIZING IN WEB DEVELOPMENT WITH 8 YEARS OF EXPERIENCE IN .NET FRAMEWORKS.</p>
+  <p class="subtitle"><a href="/lecturing">UNIVERSITY LECTURER</a> COVERING WIDE RANGE OF COMPUTER SCIENCE TOPICS FROM BASIC ALGORITHMS TO EXPERT SYSTEM.</p>
+  <p class="subtitle">VIEW MY <a href="/resume">RESUME</a>, OR READ MY POSTS BELOW.</p>
 </div>
