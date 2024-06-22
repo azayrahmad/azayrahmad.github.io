@@ -3,24 +3,64 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
+## Professional Projects
+Projects worked as vendors. Ordered from the most recent first.
 
 **Human Resource Management System (HRMS)**  
-*December 2023 – Present*  
-- Developed and maintained an HRMS product with a focus on CI/CD.
-- Acted as Scrum Master on rotation.
+*December 2023 – Present* 
+- Product: Internal.
+- Client: [Mitrais](https://www.mitrais.com/).
+- Tech stack: .NET, MongoDB, Next.js, GitHub Actions, SonarQube, Microservices, IIS.
+- Role: Backend Developer + DevOps.
+- Achievements:
+  - Set up GitHub Organization, initial repositories, and Jira administration.
+  - Implemented CI/CD using GitHub Actions.
+  - Acted as Scrum Master on rotation.
 
-**Enterprise Suite – Human Resources & Payroll | Mitrais**  
-*October 2017 – December 2023*  
-- Supported client enterprise solutions by fixing bugs, testing, and enhancing the HR and Payroll module for diverse clients in Australia, New Zealand, and Great Britain.
-- Implemented Australian STP & STP Phase 2.
-- Converted project from VB .NET to C#.
+**CiAnywhere – Human Resources & Payroll**  
+*October 2017 – December 2023* 
+- Product: [CiAnywhere HRP Overview](https://www.technologyonecorp.com/products/human-resources-and-payroll).
+- Client: [TechnologyOne](https://www.technologyonecorp.com/).
+- Tech stack: .NET Framework, .NET Core, SQL Server, Oracle, PostgreSQL.
+- Role: Developer.
+- Achievements:
+  - Implemented various payroll and tax calculations tailored for Australia, New Zealand, and Great Britain clients.
+  - Implemented Australian Single Touch Payroll (STP) & STP Phase 2.
+  - Transitioned from legacy VB .NET based .NET Framework into C# based .NET Core 7.
+  - Implemented bugfixes and other minor enhancements in various aspects of the product. 
 
-**Tax Automation | CODE.ID**  
+**Tax Automation**  
 *September 2016 – September 2017*  
-- Developed new modules for the Tax Automation web application for a major Indonesian bank.
-- Notable modules: Corporate Tax (manages fiscal reports), Accrual & Prepayment (manages accrual and amortization calculation).
+- Product: Internal.
+- Client: [Bank Danamon](https://www.danamon.co.id).
+- Tech stack: .NET Framework, SQL Server, ASP.NET.
+- Role: Developer.
+- Achievements:
+  - Developed Corporate Tax module that manages fiscal reports.
+  - Developed Accrual & Prepayment module that manages accrual and amortization calculation.
+  - Supported the product including implementation of bugfixes.
 
-**Employee Connection | CODE.ID**  
+**Employee Connection**  
 *September 2016 – September 2017*  
-- Developed new modules for the Employee Connection web application for a major Indonesian bank.
-- Notable modules: Industrial Relations (manages instances of company rule violations and low performance records).
+- Product: Internal.
+- Client: [Bank Danamon](https://www.danamon.co.id).
+- Tech stack: .NET Framework, SQL Server, ASP.NET.
+- Role: Developer.
+- Achievements:
+  - Developed Industrial Relations module that manages instances of company rule violations and low performance records.
+  - Supported the product including implementation of bugfixes.
+
+## Personal Projects
+Projects developed personally, for fun and experimentation.
+
+**Portfolio Website**
+- Link: This very website.
+
+**Multi DB Web App**
+- Link: GitHub.
+
+**Library API Demo**
+- Link: GitHub.
+
+**0 A.D. Auto-Queue**
+- Link: GitHub.
