@@ -2,6 +2,7 @@
 layout: post
 title: Using LINQ and Lambda Expressions to Simplify Your C# Code
 tags: dotnet programming beginner csharp c# .net
+comments: true
 ---
 
 <em>This article originally appeared in [Mitrais Blog](https://www.mitrais.com/news-updates/using-linq-and-lambda-expressions-to-simplify-your-c-code/).</em>
