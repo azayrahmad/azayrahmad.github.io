@@ -2,7 +2,7 @@
 layout: post
 title: "C#: How Lambda Expressions Came to Be"
 ---
-In a previous post, I wrote about using lambda expressions to simplify C# code, but I haven't touched on why lambda expressions look like that. To beginners in programming, it may seem like a big leap from traditional functions to lambda expressions—they might as well not be related at all. I think knowing how functions became lambda expressions is important in understanding how programming languages always evolve to a higher level.
+In a [previous post]({% post_url 2024-06-21-using-linq-and-lambda-expressions-to-simplify-your-c-code %}), I wrote about using lambda expressions to simplify C# code, but I haven't touched on why lambda expressions look like that. To beginners in programming, it may seem like a big leap from traditional functions to lambda expressions—they might as well not be related at all. I think knowing how functions became lambda expressions is important in understanding how programming languages always evolve to a higher level.
 
 ## Function
 Similar to the previous post I referred to, consider a case where we have student data and we want to know if a student passed the exam. We determine that a student passed if the score is above 70. We can make the class like this:
