@@ -7,7 +7,7 @@ permalink: /projects/
 Projects worked as vendors. Ordered from the most recent first.
 
 **Human Resource Management System (HRMS)**  
-*December 2023 – Present* 
+*December 2023 – April 2024* 
 - Product: Internal.
 - Client: [Mitrais](https://www.mitrais.com/).
 - Tech stack: .NET, MongoDB, Next.js, GitHub Actions, SonarQube, Microservices, IIS.

@@ -61,7 +61,7 @@ Experienced software developer with a proven track record in developing and supp
 ## Projects
 
 **Human Resource Management System (HRMS)**  
-*December 2023 – Present*  
+*December 2023 – April 2024*  
 - Developed and maintained an HRMS product with a focus on CI/CD.
 - Acted as Scrum Master on rotation.
 

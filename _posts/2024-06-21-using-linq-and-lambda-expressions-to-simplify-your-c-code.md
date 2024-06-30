@@ -5,8 +5,6 @@ tags: dotnet programming beginner csharp c# .net
 comments: true
 ---
 
-<em>This article originally appeared in [Mitrais Blog](https://www.mitrais.com/news-updates/using-linq-and-lambda-expressions-to-simplify-your-c-code/).</em>
-
 Imagine this scenario. Suppose you have a list of student’s exam scores:
 
 {% highlight csharp %}
@@ -169,3 +167,5 @@ foreach (var group in studentGrouped)
 ## Conclusion
 
 We have demonstrated how to combine LINQ with Lambda expressions. It is a nice alternative to data processing in C# that is much more concise, intuitive, and human-readable than the usual C# loop methods. It is closer to SQL query than C# code. Therefore, if you have experience with SQL queries, it will be beneficial for you. Hopefully, this introduction helps you in your C# coding journey.
+
+<em>This article originally appeared in [Mitrais Blog](https://www.mitrais.com/news-updates/using-linq-and-lambda-expressions-to-simplify-your-c-code/).</em>

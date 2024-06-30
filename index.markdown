@@ -18,7 +18,6 @@ layout: home
   .subtitle {
     margin: 30px 0;
     font-size: 2em;
-    font-weight: 550;
     line-height: 1.5;
     letter-spacing: -2px;
   }
