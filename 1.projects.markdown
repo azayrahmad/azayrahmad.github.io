@@ -54,13 +54,25 @@ Projects worked as vendors. Ordered from the most recent first.
 Projects developed personally, for fun and experimentation.
 
 **Portfolio Website**
-- Link: This very website.
+
+A personal portfolio and blogging website, made with Ruby-based Jekyll and hosted on GitHub Pages.
+- Tech stack: Ruby, Jekyll, HTML, CSS, JavaScript.
+- Link: [This very website](azayrahmad.github.io).
 
 **Multi DB Web App**
-- Link: GitHub.
+
+A demonstration of .NET web application that interacts with multiple databases, constructed with 3-tier architecture. Currently hosted on Azure Cloud.
+- Tech stack: .NET 8, SQL Server, SQLite, Blazor, Entity Framework Core, Azure, Swagger.
+- Link: [GitHub](https://github.com/azayrahmad/3TierAppWithMultiDatabases).
 
 **Library API Demo**
-- Link: GitHub.
+
+A demonstration of .NET Web API that handles relational database with caching feature.
+- Tech stack: .NET 8, SQLite, Web API, Entity Framework Core, Swagger.
+- Link: [GitHub](https://github.com/azayrahmad/DOT-API-Demo).
 
 **0 A.D. Auto-Queue**
-- Link: GitHub.
+
+Gameplay mod(ification) of the open source RTS game 0 A.D. This mod acts as a proposal to include the Auto-Queue feature into the game. Currently integrated as part of 0 A.D main game.
+- Tech stack: JavaScript, Tortoise SVN, Phabricator.
+- Link: [Initial mod on GitHub](https://github.com/azayrahmad/0AD-Auto-Queue), [pull request to the main game](https://code.wildfiregames.com/D3865).
