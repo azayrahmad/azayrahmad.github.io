@@ -9,7 +9,7 @@ layout: home
     margin: 10px auto;
     text-align: right;
   }
-  h1 {
+  .homepage-title {
     /* margin: 30px 0; */
     font-size: 7em;
     line-height: 1;
@@ -17,11 +17,12 @@ layout: home
     font-weight: bold;
     /*opacity: 0; /* Initially hidden */
   }
-  .subtitle {
+  .homepage-subtitle {
     margin: 30px 0;
     font-size: 2em;
     line-height: 1.5;
     letter-spacing: -2px;
+    text-transform: uppercase
     /*animation: fadeInSlideRight 1s ease-in-out forwards; /* Fade in and slide from right */
   }
 
@@ -55,8 +56,7 @@ layout: home
 </style>
 
 <div class="container">
-  <h1 class="blur-in"><a href="/about">aziz</a> rahmad</h1>
-  <p class="subtitle blur-in"><a href="/projects">SOFTWARE ENGINEER</a> SPECIALIZING IN .NET DEVELOPMENT SINCE 2015.</p>
-  <p class="subtitle blur-in"><a href="/lecturing">UNIVERSITY LECTURER</a> COVERING WIDE RANGE OF COMPUTER SCIENCE TOPICS.</p>
-  <p class="subtitle blur-in">GET IN <a href="mailto:azayrahmad@gmail.com">TOUCH</a>, CHECK MY <a href="linkedin.com/in/aziz-rahmad">LINKEDIN PROFILE</A>, VIEW MY <a href="/resume">RESUME</a>, OR READ MY POSTS BELOW.</p>
+  <h1 class="homepage-title"><a href="/about">aziz</a> rahmad</h1>
+  <p class="homepage-subtitle"><a href="/projects">Software engineer</a> specializing in .NET since 2015. <a href="/lecturing">University lecturer</a> covering wide range of computer science topics.</p>
+  <p class="homepage-subtitle">Get in <a href="mailto:azayrahmad@gmail.com">touch</a>, check my <a href="linkedin.com/in/aziz-rahmad">LinkedIn profile</a>, view my <a href="/resume">resume</a>, or read my posts below.</p>
 </div>
