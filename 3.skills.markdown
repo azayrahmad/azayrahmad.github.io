@@ -5,43 +5,43 @@ permalink: /skills/
 ---
 
 ## Programming Languages
+
 - **Advanced:**
   - C#
   - VB .NET
 - **Intermediate:**
-  - .NET Core
-  - .NET Framework
+  - HTML
+  - CSS
+  - JavaScript
 - **Beginner:**
-  - Golang (eager to learn)
+  - Python
+  - Ruby
 
 ## Databases
+
 - **Advanced:**
   - MS SQL Server
 - **Intermediate:**
   - PostgreSQL
   - Oracle
 - **Beginner:**
-  - Tibero DB (familiarity and adaptability)
+  - MongoDB
 
 ## Tools and Technologies
+
 - **Advanced:**
   - Git
   - Crystal Report
   - SSRS
 - **Intermediate:**
-  - Agile Methodologies (Scrum)
-  - CI/CD (Continuous Integration, Continuous Delivery)
+  - GitHub Actions
   - Unit Test
   - Regression Test
 - **Beginner:**
-  - Cloud Technologies (AWS)
-  - Messaging Platforms (RabbitMQ, Kafka)
+  - Azure
 
 ## Methodologies
+
 - **Advanced:**
   - Agile Methodologies
   - Scrum
-
-## Languages
-- **Professional:**
-  - English

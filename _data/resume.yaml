@@ -1,0 +1,102 @@
+professional_summary: >
+  Experienced software developer with a proven track record in developing and supporting enterprise software solutions
+  for diverse markets including Indonesia, Australia, and New Zealand. Professional English proficiency with a
+  demonstrated history of collaborating in multinational teams. Strong academic foundation holding a master's degree
+  in computer science and experienced in delivering lectures at universities and schools.
+
+experience:
+  - title: Lecturer
+    company: Primakara University
+    location: Bali, Indonesia
+    period: February 2022 – Present
+    responsibilities:
+      - Deliver lectures on Computer Science topics.
+    courses:
+      - Basics of Programming
+      - Data Structures & Algorithms
+      - Database Systems
+      - Expert Systems
+
+  - title: Analyst Programmer
+    company: Mitrais
+    location: Bali, Indonesia
+    period: October 2017 – April 2024
+    responsibilities:
+      - Develop high-quality software solutions.
+      - Create data-driven solutions for various clients.
+      - Collaborate within cross-functional, international agile teams.
+      - Test, debug, re-test, and coordinate with QA to validate software readiness.
+      - Review code and provide expertise to junior team members.
+
+  - title: Software Consultant
+    company: CODE.ID
+    location: Jakarta, Indonesia
+    period: November 2015 – October 2017
+    responsibilities:
+      - Design, code, test, and manage various applications.
+      - Collaborate with engineering and product teams to develop best products.
+      - Adhere to quality standards for code and systems.
+      - Develop automated tests and conduct performance tuning.
+
+education:
+  degree: Master of Computer Science
+  institution: Bogor Agricultural University
+  period: 2012 – 2015
+  details:
+    - Relevant coursework: Algorithm Analysis & Design, Advanced Software Development
+    - Graduated Cum Laude with a GPA of 3.69/4.00
+
+skills:
+  programming_languages:
+    - .NET Framework
+    - .NET Core
+    - C#
+    - VB .NET
+  databases:
+    - MS SQL Server
+    - PostgreSQL
+    - Oracle
+  tools:
+    - Git
+    - Crystal Report
+    - SSRS
+  methodologies:
+    - Agile Methodologies
+    - Scrum
+  testing:
+    - Unit Test
+    - Regression Test
+  ci_cd:
+    - Continuous Integration
+    - Continuous Delivery
+  languages:
+    - Professional English
+
+professional_projects:
+  - name: Human Resource Management System (HRMS)
+    period: December 2023 – April 2024
+    details:
+      - Developed and maintained an HRMS product with a focus on CI/CD.
+      - Acted as Scrum Master on rotation.
+
+  - name: Enterprise Suite – Human Resources & Payroll
+    company: Mitrais
+    period: October 2017 – December 2023
+    details:
+      - Supported client enterprise solutions by fixing bugs, testing, and enhancing the HR and Payroll module for diverse clients in Australia, New Zealand, and Great Britain.
+      - Implemented Australian STP & STP Phase 2.
+      - Converted project from VB .NET to C#.
+
+  - name: Tax Automation
+    company: CODE.ID
+    period: September 2016 – September 2017
+    details:
+      - Developed new modules for the Tax Automation web application for a major Indonesian bank.
+      - Notable modules: Corporate Tax (manages fiscal reports), Accrual & Prepayment (manages accrual and amortization calculation).
+
+  - name: Employee Connection
+    company: CODE.ID
+    period: September 2016 – September 2017
+    details:
+      - Developed new modules for the Employee Connection web application for a major Indonesian bank.
+      - Notable modules: Industrial Relations (manages instances of company rule violations and low performance records).

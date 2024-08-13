@@ -3,11 +3,14 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
+
 ## Professional Projects
+
 Projects worked as vendors. Ordered from the most recent first.
 
-**Human Resource Management System (HRMS)**  
-*December 2023 – April 2024* 
+**Human Resource Management System (HRMS)**
+_December 2023 – April 2024_
+
 - Product: Internal.
 - Client: [Mitrais](https://www.mitrais.com/).
 - Tech stack: .NET, MongoDB, Next.js, GitHub Actions, SonarQube, Microservices, IIS.
@@ -17,8 +20,9 @@ Projects worked as vendors. Ordered from the most recent first.
   - Implemented CI/CD using GitHub Actions.
   - Acted as Scrum Master on rotation.
 
-**CiAnywhere – Human Resources & Payroll**  
-*October 2017 – December 2023* 
+**CiAnywhere – Human Resources & Payroll**
+_October 2017 – December 2023_
+
 - Product: [CiAnywhere HRP Overview](https://www.technologyonecorp.com/products/human-resources-and-payroll).
 - Client: [TechnologyOne](https://www.technologyonecorp.com/).
 - Tech stack: .NET Framework, .NET Core, SQL Server, Oracle, PostgreSQL.
@@ -27,10 +31,11 @@ Projects worked as vendors. Ordered from the most recent first.
   - Implemented various payroll and tax calculations tailored for Australia, New Zealand, and Great Britain clients.
   - Implemented Australian Single Touch Payroll (STP) & STP Phase 2.
   - Transitioned from legacy VB .NET based .NET Framework into C# based .NET Core 7.
-  - Implemented bugfixes and other minor enhancements in various aspects of the product. 
+  - Implemented bugfixes and other minor enhancements in various aspects of the product.
 
-**Tax Automation**  
-*September 2016 – September 2017*  
+**Tax Automation**
+_September 2016 – September 2017_
+
 - Product: Internal.
 - Client: [Bank Danamon](https://www.danamon.co.id).
 - Tech stack: .NET Framework, SQL Server, ASP.NET.
@@ -40,8 +45,9 @@ Projects worked as vendors. Ordered from the most recent first.
   - Developed Accrual & Prepayment module that manages accrual and amortization calculation.
   - Supported the product including implementation of bugfixes.
 
-**Employee Connection**  
-*September 2016 – September 2017*  
+**Employee Connection**
+_September 2016 – September 2017_
+
 - Product: Internal.
 - Client: [Bank Danamon](https://www.danamon.co.id).
 - Tech stack: .NET Framework, SQL Server, ASP.NET.
@@ -51,28 +57,33 @@ Projects worked as vendors. Ordered from the most recent first.
   - Supported the product including implementation of bugfixes.
 
 ## Personal Projects
+
 Projects developed personally, for fun and experimentation.
 
 **Portfolio Website**
 
 A personal portfolio and blogging website, made with Ruby-based Jekyll and hosted on GitHub Pages.
+
 - Tech stack: Ruby, Jekyll, HTML, CSS, JavaScript.
 - Link: [This very website](azayrahmad.github.io).
 
 **Multi DB Web App**
 
 A demonstration of .NET web application that interacts with multiple databases, constructed with 3-tier architecture. Currently hosted on Azure Cloud.
+
 - Tech stack: .NET 8, SQL Server, SQLite, Blazor, Entity Framework Core, Azure, Swagger.
 - Link: [GitHub](https://github.com/azayrahmad/3TierAppWithMultiDatabases).
 
 **Library API Demo**
 
 A demonstration of .NET Web API that handles relational database with caching feature.
+
 - Tech stack: .NET 8, SQLite, Web API, Entity Framework Core, Swagger.
 - Link: [GitHub](https://github.com/azayrahmad/DOT-API-Demo).
 
 **0 A.D. Auto-Queue**
 
 Gameplay mod(ification) of the open source RTS game 0 A.D. This mod acts as a proposal to include the Auto-Queue feature into the game. Currently integrated as part of 0 A.D main game.
+
 - Tech stack: JavaScript, Tortoise SVN, Phabricator.
 - Link: [Initial mod on GitHub](https://github.com/azayrahmad/0AD-Auto-Queue), [pull request to the main game](https://code.wildfiregames.com/D3865).
