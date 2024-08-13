@@ -4,6 +4,7 @@
 
 layout: home
 ---
+
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
@@ -58,5 +59,5 @@ layout: home
 <div class="container">
   <h1 class="homepage-title"><a href="/about">aziz</a> rahmad</h1>
   <p class="homepage-subtitle"><a href="/projects">Software engineer</a> specializing in .NET since 2015. <a href="/lecturing">University lecturer</a> covering wide range of computer science topics.</p>
-  <p class="homepage-subtitle">Get in <a href="mailto:azayrahmad@gmail.com">touch</a>, check my <a href="linkedin.com/in/aziz-rahmad">LinkedIn profile</a>, view my <a href="/resume">resume</a>, or read my posts below.</p>
+  <p class="homepage-subtitle">Get in <a href="mailto:azayrahmad@gmail.com">touch</a>, check my <a href="https://www.linkedin.com/in/aziz-rahmad">LinkedIn profile</a>, view my <a href="/resume">resume</a>, or read my posts below.</p>
 </div>
