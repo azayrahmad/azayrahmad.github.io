@@ -3,6 +3,9 @@ layout: page
 title: Resume
 permalink: /resume/
 ---
+
+---
+
 ## Professional Summary
 
 {{ site.data.resume.professional_summary }}
@@ -12,6 +15,7 @@ permalink: /resume/
 ## Experience
 
 {% for experience in site.data.resume.experience %}
+
   <h3>{{ experience.title | append: " | " | append: experience.company | append: ", " | append: experience.location }}</h3>
   *{{ experience.period }}*
   <ul>
@@ -33,7 +37,8 @@ permalink: /resume/
 ## Education
 
 **Master of Computer Science | Bogor Agricultural University**
-*2012 – 2015*
+_2012 – 2015_
+
 - Relevant coursework: Algorithm Analysis & Design, Advanced Software Development
 - Graduated Cum Laude with a GPA of 3.69/4.00
 
@@ -54,22 +59,26 @@ permalink: /resume/
 ## Professional Projects
 
 **Human Resource Management System (HRMS)**
-*December 2023 – April 2024*
+_December 2023 – April 2024_
+
 - Developed and maintained an HRMS product with a focus on CI/CD.
 - Acted as Scrum Master on rotation.
 
 **Enterprise Suite – Human Resources & Payroll | Mitrais**
-*October 2017 – December 2023*
+_October 2017 – December 2023_
+
 - Supported client enterprise solutions by fixing bugs, testing, and enhancing the HR and Payroll module for diverse clients in Australia, New Zealand, and Great Britain.
 - Implemented Australian STP & STP Phase 2.
 - Converted project from VB .NET to C#.
 
 **Tax Automation | CODE.ID**
-*September 2016 – September 2017*
+_September 2016 – September 2017_
+
 - Developed new modules for the Tax Automation web application for a major Indonesian bank.
 - Notable modules: Corporate Tax (manages fiscal reports), Accrual & Prepayment (manages accrual and amortization calculation).
 
 **Employee Connection | CODE.ID**
-*September 2016 – September 2017*
+_September 2016 – September 2017_
+
 - Developed new modules for the Employee Connection web application for a major Indonesian bank.
 - Notable modules: Industrial Relations (manages instances of company rule violations and low performance records).
