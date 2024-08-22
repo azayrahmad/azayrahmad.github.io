@@ -6,6 +6,9 @@ permalink: /resume/
 
 ---
 
+[Summary](#professional-summary)
+[Skills](#skills)
+
 ## Professional Summary
 
 {{ site.data.resume.professional_summary }}
@@ -16,8 +19,8 @@ permalink: /resume/
 
 {% for experience in site.data.resume.experience %}
 
-  <h3>{{ experience.title | append: " | " | append: experience.company | append: ", " | append: experience.location }}</h3>
-  *{{ experience.period }}*
+  <h3>{{ experience.company | append: " - " | append: experience.location }}</h3>
+  <h5>{{ experience.title }} -- {{ experience.period }}</h5>
   <ul>
   {% for responsibility in experience.responsibilities %}
     <li>{{ responsibility }}</li>
