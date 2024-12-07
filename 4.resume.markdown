@@ -6,8 +6,13 @@ permalink: /resume/
 
 ---
 
-[Summary](#professional-summary)
-[Skills](#skills)
+## Contents
+
+- [Summary](#professional-summary)
+- [Experience](#experience)
+- [Education](#education)
+- [Skills](#skills)
+- [Professional Projects](#professional-projects)
 
 ## Professional Summary
 

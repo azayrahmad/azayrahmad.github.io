@@ -5,6 +5,14 @@ professional_summary: >
   in computer science and experienced in delivering lectures at universities and schools.
 
 experience:
+  - title: Senior Web Developer
+    company: NTainers Pty Ltd
+    location: Sydney, Australia
+    period: August 2024 – Present
+    responsibilities:
+      - Develop scalable backend .NET APIs to be integrated with frontend apps and various clients' external apps.
+      - Develop responsive web app with Blazor.
+      - Develop AI-powered .NET APIs to handle various SCM-related automation tasks.
   - title: Lecturer
     company: Primakara University
     location: Bali, Indonesia
