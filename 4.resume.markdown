@@ -25,7 +25,7 @@ permalink: /resume/
 {% for experience in site.data.resume.experience %}
 
   <h3>{{ experience.company | append: " - " | append: experience.location }}</h3>
-  <h5>{{ experience.title }} -- {{ experience.period }}</h5>
+  <p><strong>{{ experience.title }}</strong> -- <i>{{ experience.period }}</i></p>
   <ul>
   {% for responsibility in experience.responsibilities %}
     <li>{{ responsibility }}</li>
