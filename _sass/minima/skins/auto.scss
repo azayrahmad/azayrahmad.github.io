@@ -10,29 +10,30 @@ $color-scheme-dark: false !default;
 // Light mode
 // ----------
 
-$lm-brand-color:           #c5a880 !default; // Base beige color
-$lm-brand-color-light:     lighten($lm-brand-color, 40%) !default; // Lighter beige
-$lm-brand-color-dark:      darken($lm-brand-color, 25%) !default; // Darker beige
+$lm-brand-color:           #828282 !default;
+$lm-brand-color-light:     lighten($lm-brand-color, 40%) !default; // Light gray
+$lm-brand-color-dark:      darken($lm-brand-color, 25%) !default; // Dark gray
 
 $lm-site-title-color:      $lm-brand-color-dark !default;
 
-$lm-text-color:            #4a3f35 !default; // Warm brown for text
-$lm-background-color:      #f8f4ec !default; // Soft beige background
-$lm-code-background-color: #f4ead8 !default; // Slightly darker beige for contrast
+$lm-text-color:            #111111 !default; // Dark gray for text
+$lm-background-color:      #f9f9f9 !default; // Light gray background
+$lm-code-background-color: #e0e0e0 !default; // Slightly darker light gray
 
-$lm-link-base-color:       #8c6849 !default; // Muted warm brown
+$lm-link-base-color:       #4d4d4d !default; // Medium gray
 $lm-link-visited-color:    darken($lm-link-base-color, 15%) !default;
 $lm-link-hover-color:      $lm-text-color !default;
 
-$lm-border-color-01:       lighten($lm-brand-color, 40%) !default; // Light beige
+$lm-border-color-01:       lighten($lm-brand-color, 40%) !default; // Light gray
 $lm-border-color-02:       lighten($lm-brand-color, 35%) !default;
 $lm-border-color-03:       $lm-brand-color-dark !default;
 
-$lm-table-text-color:      lighten($lm-text-color, 18%) !default; // Softer brown
-$lm-table-zebra-color:     lighten($lm-brand-color, 46%) !default; // Very light beige
-$lm-table-header-bg-color: lighten($lm-brand-color, 43%) !default; // Pale beige
-$lm-table-header-border:   lighten($lm-brand-color, 37%) !default; // Light beige
+$lm-table-text-color:      lighten($lm-text-color, 18%) !default; // Slightly lighter gray
+$lm-table-zebra-color:     lighten($lm-brand-color, 46%) !default; // Very light gray
+$lm-table-header-bg-color: lighten($lm-brand-color, 43%) !default; // Very light gray
+$lm-table-header-border:   lighten($lm-brand-color, 37%) !default; // Light gray
 $lm-table-border-color:    $lm-border-color-01 !default;
+
 
 
 

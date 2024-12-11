@@ -8,7 +8,7 @@ layout: home
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
-    text-align: right;
+    text-align: center;
   }
   .homepage-title {
     /* margin: 30px 0; */
@@ -19,7 +19,7 @@ layout: home
     /*opacity: 0; /* Initially hidden */
   }
   .homepage-subtitle {
-    margin: 30px 0;
+    margin: 30px 20%;
     font-size: 2em;
     line-height: 1.5;
     letter-spacing: -2px;
