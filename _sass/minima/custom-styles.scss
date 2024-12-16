@@ -10,18 +10,18 @@ h3 {
     font-weight: bold;
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300%;
-    height: 300%;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
-    opacity: 0.1;
-    animation: grainEffect 8s steps(10) infinite;
-    pointer-events: none;
-}
+// body::after {
+//     content: "";
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 300%;
+//     height: 300%;
+//     background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
+//     opacity: 0.1;
+//     animation: grainEffect 8s steps(10) infinite;
+//     pointer-events: none;
+// }
 
 @keyframes grainEffect {
 
@@ -69,4 +69,64 @@ body::after {
     100% {
         transform: translate(-15%, -20%)
     }
+}
+
+.site-header {
+  line-height: $base-line-height;
+}
+
+.site-title, .page-link {
+  font-size: 40px; // Example size
+}
+
+.site-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $background-color;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); // Optional: adds a subtle shadow for depth
+
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background-image: url("../../assets/img/1k_Dissolve_Noise_Texture.png");
+    opacity: 0.1;
+    animation: grainEffect 8s steps(10) infinite;
+    pointer-events: none;
+    z-index: 1001; // Ensure it's above the header content but below other page elements
+  }
+}
+
+.page-link {
+  &.active {
+    font-weight: bold;
+    // Optionally add other styles to highlight the active page
+    // color: $active-link-color; // You can define this variable or use a specific color
+    // text-decoration: underline;
+  }
+}
+// Add padding to the body to prevent content from being hidden behind the fixed header
+body {
+  padding-top: $spacing-unit * 1.865;
+}
+
+// Ensure wrapper maintains its original layout
+.site-header .wrapper {
+  position: relative;
+  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin: 0 auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+}
+
+@include media-query($on-palm) {
+  body {
+    padding-top: calc(#{$spacing-unit * 1.865} + 10px);
+  }
 }
