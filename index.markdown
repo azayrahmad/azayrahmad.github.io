@@ -59,28 +59,51 @@ layout: home
   }
 
   .skills-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     margin: 40px 0;
+    width: 100%;
   }
 
   .skill-card {
     background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 24px;
+    border-radius: 12px;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
   }
 
   .skill-card:hover {
-    transform: translateY(-5px);
+    transform: translateX(5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 
   .skill-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+  }
+
+  .skill-content {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .skill-title {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #333;
+  }
+
+  .skill-description {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
   }
 
   .contact-links {
@@ -171,15 +194,24 @@ layout: home
   <div class="skills-section fade-in">
     <div class="skill-card">
       <img src="/assets/images/dotnet.svg" alt=".NET" class="skill-icon">
-      <h3>.NET Development</h3>
+      <div class="skill-content">
+        <h3 class="skill-title">.NET Development</h3>
+        <p class="skill-description">Experienced in building scalable enterprise applications using .NET Core and ASP.NET, with a focus on clean architecture and best practices.</p>
+      </div>
     </div>
     <div class="skill-card">
       <img src="/assets/images/teaching.svg" alt="Teaching" class="skill-icon">
-      <h3>Computer Science Education</h3>
+      <div class="skill-content">
+        <h3 class="skill-title">Computer Science Education</h3>
+        <p class="skill-description">Passionate educator teaching programming fundamentals, algorithms, and software engineering principles to university students.</p>
+      </div>
     </div>
     <div class="skill-card">
       <img src="/assets/images/code.svg" alt="Code" class="skill-icon">
-      <h3>Software Architecture</h3>
+      <div class="skill-content">
+        <h3 class="skill-title">Software Architecture</h3>
+        <p class="skill-description">Designing robust and maintainable software systems with expertise in microservices, domain-driven design, and cloud architecture.</p>
+      </div>
     </div>
   </div>
 
