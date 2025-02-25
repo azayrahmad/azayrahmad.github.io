@@ -161,12 +161,12 @@ body {
 }
 
 .text-content {
-  text-align: left;
-  max-width: 600px;
+  text-align: center;
+  // max-width: 600px;
 }
 
 .homepage-title {
-  font-size: 6em;
+  font-size: 8em;
   line-height: 1.2;
   letter-spacing: -2px;
   font-weight: bold;
@@ -194,12 +194,12 @@ body {
 
 .skill-card {
   background: $background-color;
-  padding: 24px;
-  border-radius: 12px;
+  // padding: 24px;
+  // border-radius: 12px;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 24px;
+  // gap: 24px;
   width: 100%;
 }
 
@@ -209,19 +209,19 @@ body {
 // }
 
 .skill-icon {
-  width: 30%;
-  height: 30%;
+  width: 50%;
+  height: 50%;
   flex-shrink: 0;
 }
 
 .skill-content {
-  width: 70%;
+  width: 50%;
   //flex-grow: 1;
   text-align: left;
 }
 
 .skill-title {
-  font-size: 2em;
+  font-size: 4em;
   font-weight: 600;
   margin: 0 0 8px 0;
   color: $brand-color;
@@ -305,5 +305,19 @@ body {
 
   .homepage-subtitle {
     font-size: 1.2em;
+  }
+
+  .skill-title {
+    font-size: 2em;
+  }
+
+  .skill-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skill-content {
+    width: 100%;
+    text-align: center;
   }
 }

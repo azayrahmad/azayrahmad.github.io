@@ -11,10 +11,10 @@ layout: home
 
 <div class="container">
   <div class="profile-section fade-in">
-    <img src="/assets/img/azayrahmad-qrcode.png" alt="Aziz Rahmad" class="profile-image blur-in">
+    <!-- <img src="/assets/img/azayrahmad-qrcode.png" alt="Aziz Rahmad" class="profile-image blur-in"> -->
     <div class="text-content">
       <h1 class="homepage-title"><a href="/about">aziz</a> rahmad.</h1>
-      <p class="homepage-subtitle">A <a href="/projects">Software engineer</a> specializing in .NET since 2015 and a <a href="/lecturing">University lecturer</a> passionate about computer science education.</p>
+      <p class="homepage-subtitle"><a href="/projects">Software engineer</a> specializing in .NET since 2015. <a href="/lecturing">university lecturer</a> passionate about computer science education.</p>
     </div>
   </div>
 
