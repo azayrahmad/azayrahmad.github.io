@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio - Windows 98 Style</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="scanlines-css.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+            background-color: #008080;
+            /* Classic Win98 teal background */
+            font-size: 24px
+        }
+
+        .desktop {
+            height: calc(100% - 28px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .window {
+            width: 400px;
+            position: absolute;
+        }
+
+        .window-content {
+            padding: 10px;
+        }
+
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: silver;
+            border-top: 2px solid gray;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .start-button {
+            font-weight: bold;
+        }
+
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="desktop scanlines">
+        <div id="portfolioWindow" class="window" style="top: 70px; left: 120px;">
+            <div id="portfolioTitleBar" class="title-bar">
+                <div class="title-bar-text">My Portfolio</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Restore" style="display: none;"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+            </div>
+        </div>
+
+        <div id="portfolioWindow2" class="window">
+            <div id="portfolioTitleBar" class="title-bar">
+                <div class="title-bar-text">My Portfolio 2</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Restore" style="display: none;"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+            </div>
+        </div>
+    </div>
+
+    <div class="taskbar">
+        <button class="start-button">
+            <img src="windows-4.png" alt="Windows Logo">
+            Start
+        </button>
+        <button id="togglePortfolioBtn" for="portfolioWindow" class="taskbar-button">Windows 98 Portfolio</button>
+        <button id="togglePortfolioBtn2" for="portfolioWindow2" class="taskbar-button">Windows 98 Portfolio2</button>
+    </div>
+
+    <script>
+        // Reusable transition animation function
+        function animateTransition(element, targetStyles, callback, transitionSpec = 'left 0.2s ease, top 0.2s ease, width 0.2s ease') {
+            element.style.transition = transitionSpec;
+            // Force reflow so that the transition is applied
+            element.offsetWidth;
+            Object.entries(targetStyles).forEach(([prop, value]) => {
+                element.style[prop] = value;
+            });
+            element.addEventListener('transitionend', function handler() {
+                element.removeEventListener('transitionend', handler);
+                callback();
+            });
+        }
+        let highestZIndex = 100; // starting z-index
+
+        document.querySelectorAll('.window').forEach(win => {
+            win.addEventListener('mousedown', function () {
+                highestZIndex++;
+                this.style.zIndex = highestZIndex;
+            });
+        });
+        // Make windows draggable
+        document.querySelectorAll('.window').forEach(makeWindowDraggable);
+
+        // Window controls
+        document.querySelectorAll('.title-bar-controls button[aria-label="Close"]').forEach(button => {
+            button.addEventListener('click', function () {
+                var win = this.closest('.window');
+                win.classList.add('hidden');
+                const btn = document.querySelector(`.taskbar-button[for="${win.id}"]`);
+                btn.classList.add('hidden');
+            });
+        });
+        document.querySelectorAll('.title-bar-controls button[aria-label="Minimize"]').forEach(button => {
+            button.addEventListener('click', function () {
+                minimizeWindow(this.closest('.window'));
+            });
+        });
+        document.querySelectorAll('.title-bar-controls button[aria-label="Maximize"]').forEach(button => {
+            button.addEventListener('click', function () {
+                maximizeWindow(this.closest('.window'));
+            });
+        });
+        document.querySelectorAll('.title-bar-controls button[aria-label="Restore"]').forEach(button => {
+            button.addEventListener('click', function () {
+                restoreFromMaximized(this.closest('.window'));
+            });
+        });
+        document.querySelectorAll('.taskbar-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                var targetId = event.target.getAttribute('for');
+                var win = document.getElementById(targetId);
+                if (win.isMinimized) {
+                    restoreWindow(win);
+                } else {
+                    minimizeWindow(win);
+                }
+            });
+        });
+
+        function makeWindowDraggable(win) {
+            const titleBar = win.querySelector('.title-bar');
+            let offsetX, offsetY, isDragging = false;
+            let dragOutline = null;
+
+            titleBar.addEventListener('mousedown', function (e) {
+                // If the event target is inside the controls, do not initiate dragging.
+                if (e.target.closest('.title-bar-controls')) return;
+
+                isDragging = true;
+                const rect = win.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+
+                // Create an outline element at the same size and position as the window
+                dragOutline = document.createElement('div');
+                dragOutline.style.position = 'absolute';
+                dragOutline.style.border = '2px solid black';
+                dragOutline.style.boxSizing = 'border-box';
+                dragOutline.style.width = rect.width + 'px';
+                dragOutline.style.height = rect.height + 'px';
+                dragOutline.style.left = rect.left + 'px';
+                dragOutline.style.top = rect.top + 'px';
+                dragOutline.style.pointerEvents = 'none';
+                dragOutline.style.zIndex = highestZIndex;
+
+                // Append the outline and hide the actual window
+                win.parentElement.appendChild(dragOutline);
+                win.style.display = 'none';
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!isDragging || !dragOutline) return;
+                dragOutline.style.left = (e.clientX - offsetX) + 'px';
+                dragOutline.style.top = (e.clientY - offsetY) + 'px';
+            });
+
+            document.addEventListener('mouseup', function () {
+                if (!isDragging) return;
+                isDragging = false;
+                if (dragOutline) {
+                    // Restore the window and update its position to that of the outline
+                    win.style.display = '';
+                    win.style.position = 'absolute';
+                    win.style.left = dragOutline.style.left;
+                    win.style.top = dragOutline.style.top;
+
+                    // Remove the outline element
+                    dragOutline.parentElement.removeChild(dragOutline);
+                    dragOutline = null;
+                }
+            });
+        }
+
+        function minimizeWindow(win) {
+            if (win.isMinimized) return;
+            const titleBar = win.querySelector('.title-bar');
+            const windowContent = win.querySelector('.window-content');
+            // Capture the title bar's original position and size
+            win.originalTitleBarRect = titleBar.getBoundingClientRect();
+
+            // Immediately hide window content
+            windowContent.style.display = 'none';
+
+            // Get the target position from the taskbar button
+            const btn = document.querySelector(`.taskbar-button[for="${win.id}"]`);
+            const btnRect = btn.getBoundingClientRect();
+
+            // Set the title bar to fixed position using its current values
+            win.style.position = 'fixed';
+            win.style.left = win.originalTitleBarRect.left + 'px';
+            win.style.top = win.originalTitleBarRect.top + 'px';
+            win.style.width = win.originalTitleBarRect.width + 'px';
+
+            // Animate title bar to taskbar button's location and width
+            animateTransition(win, {
+                left: btnRect.left + 'px',
+                top: btnRect.top + 'px',
+                width: btnRect.width + 'px'
+            }, function () {
+                win.style.display = 'none';
+                win.isMinimized = true;
+            });
+        }
+
+        function restoreWindow(win) {
+            if (!win.isMinimized) return;
+            const windowContent = win.querySelector('.window-content');
+            // Make the window visible
+            win.style.display = '';
+
+            // Get the taskbar button's current bounding rectangle
+            const btn = document.querySelector(`.taskbar-button[for="${win.id}"]`);
+            const btnRect = btn.getBoundingClientRect();
+
+            // Position the window at the taskbar button's location
+            win.style.position = 'fixed';
+            win.style.left = btnRect.left + 'px';
+            win.style.top = btnRect.top + 'px';
+            win.style.width = btnRect.width + 'px';
+
+            // Animate back to the original location and size
+            animateTransition(win, {
+                left: win.originalTitleBarRect.left + 'px',
+                top: win.originalTitleBarRect.top + 'px',
+                width: win.originalTitleBarRect.width + 'px'
+            }, function () {
+                windowContent.style.display = '';
+                win.isMinimized = false;
+            });
+        }
+
+        function maximizeWindow(win) {
+            if (win.isMaximized) return;
+            const taskbarHeight = document.querySelector('.taskbar').offsetHeight;
+            const titleBar = win.querySelector('.title-bar');
+            const windowContent = win.querySelector('.window-content');
+            win.originalTitleBarRect = titleBar.getBoundingClientRect();
+            win.originalHeight = win.style.height;
+            windowContent.style.display = 'none';
+
+            // Set initial values before maximizing
+            win.style.position = 'fixed';
+            win.style.left = win.originalTitleBarRect.left + 'px';
+            win.style.top = win.originalTitleBarRect.top + 'px';
+            win.style.width = win.originalTitleBarRect.width + 'px';
+
+            // Animate to maximized state
+            animateTransition(win, {
+                left: '0',
+                top: '0',
+                width: '100%'
+            }, function () {
+                win.isMaximized = true;
+                updateWindowControls(win)
+                win.style.height = `calc(100% - ${taskbarHeight}px)`;
+                windowContent.style.display = '';
+            });
+        }
+        function restoreFromMaximized(win) {
+            if (!win.isMaximized) return;
+            const windowContent = win.querySelector('.window-content');
+            windowContent.style.display = 'none';
+            animateTransition(win, {
+                left: win.originalTitleBarRect.left + 'px',
+                top: win.originalTitleBarRect.top + 'px',
+                width: win.originalTitleBarRect.width + 'px',
+            }, function () {
+                win.isMaximized = false;
+                updateWindowControls(win);
+                win.style.height = win.originalHeight;
+                windowContent.style.display = '';
+            });
+        }
+        // Call this whenever the window state changes (after maximize/restore)
+        function updateWindowControls(win) {
+            const maximizeBtn = win.querySelector('.title-bar-controls button[aria-label="Maximize"]');
+            const restoreBtn = win.querySelector('.title-bar-controls button[aria-label="Restore"]');
+
+            if (win.isMaximized) {
+                // When maximized, hide maximize button and show restore button
+                maximizeBtn.style.display = 'none';
+                restoreBtn.style.display = 'inline-block';
+            } else {
+                // When not maximized, hide restore button and show maximize button
+                maximizeBtn.style.display = 'inline-block';
+                restoreBtn.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
