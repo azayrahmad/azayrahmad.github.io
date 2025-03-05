@@ -46,5 +46,6 @@ layout: home
     <a href="mailto:azayrahmad@gmail.com" class="contact-link">Email</a>
     <a href="https://www.linkedin.com/in/aziz-rahmad" class="contact-link">LinkedIn</a>
     <a href="/resume" class="contact-link">Resume</a>
+    <a href="/win98" class="contact-link">Try Win98</a>
   </div>
 </div>
