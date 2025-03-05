@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio - Windows 98 Style</title>
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
-    <link rel="stylesheet" href="/win98/scanlines-css.css">
+    <!-- <link rel="stylesheet" href="/win98/scanlines-css.css"> -->
     <style>
         body,
         html {
@@ -17,7 +17,8 @@
             font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
             background-color: #008080;
             /* Classic Win98 teal background */
-            font-size: 24px
+            font-size: 24px;
+            image-rendering: pixelated;
         }
 
         .desktop {
@@ -66,11 +67,39 @@
         .title-bar {
             user-select: none;
         }
+
+        .desktop-icon {
+            width: 70px;
+            text-align: center;
+            position: absolute;
+            color: white;
+            cursor: pointer;
+        }
+
+        .desktop-icon .icon {
+            display: block;
+            /* width: 32px;
+            height: 32px; */
+            margin: 4px auto;
+        }
+
+        .desktop-icon .icon-label {
+            font-size: 11px;
+        }
     </style>
 </head>
 
 <body>
     <div class="desktop scanlines">
+        <!-- My Computer Icon -->
+        <div class="desktop-icon" style="top: 20px; left: 20px;">
+            <div class="icon">
+                <img src="/win98/computer_explorer.ico" alt="My Computer">
+            </div>
+            <div class="icon-label">My Computer</div>
+        </div>
+
+
         <div id="portfolioWindow" class="window" style="top: 70px; left: 120px;">
             <div id="portfolioTitleBar1" class="title-bar inactive">
                 <div class="title-bar-text">My Portfolio</div>
