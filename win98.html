@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.5" />
-    <title>My Portfolio - Windows 98 Style</title>
+    <title>azOS</title>
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <link rel="stylesheet" href="/win98/scanlines-css.css">
     <style>
@@ -25,6 +25,16 @@
             height: calc(100% - 28px);
             position: relative;
             overflow: hidden;
+            display: grid;
+            /* Enable CSS Grid */
+            grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+            /* Create columns that fit the content */
+            grid-auto-columns: min-content;
+            /* Adjust rows to content height */
+            padding: 10px;
+            /* Add padding around the grid */
+            gap: 5px;
+            /* Add gap between grid items (icons) */
         }
 
         .window {
@@ -91,6 +101,22 @@
             min-width: 200px;
         }
 
+        .taskbar-button.active {
+            box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+            text-shadow: 1px 1px #222;
+            background-image: url("/win98/checker.png");
+            background-repeat: repeat;
+        }
+
+        .taskbar-button.active img {
+            transform: translate(1px, 1px);
+            /* Move the icon when the button is active */
+        }
+
+        button:not(:disabled):active img {
+            transform: translate(1px, 1px);
+        }
+
         .taskbar-icon {
             display: flex;
             align-items: center;
@@ -123,16 +149,22 @@
         .desktop-icon {
             width: 70px;
             text-align: center;
-            position: absolute;
+            /* position: relative;  Remove relative positioning */
             color: white;
-            cursor: pointer;
+            margin: 5px;
+            /* Keep the margin */
         }
 
         .desktop-icon .icon {
             display: block;
             /* width: 32px;
             height: 32px; */
-            margin: 4px auto;
+            margin: auto;
+        }
+
+        .desktop-icon .icon img {
+            width: 32px;
+            height: 32px;
         }
 
         .desktop-icon .icon-label {
@@ -155,48 +187,56 @@
     </style>
 </head>
 
-<body>
-    <div class="desktop scanlines">
+<body class="scanlines">
+    <div class="desktop">
         <!-- My Computer Icon -->
-        <div class="desktop-icon" for="portfolioWindow" style="top: 20px; left: 20px;">
-            <div class="icon">
-                <img src="/win98/computer_explorer.ico" alt="My Computer">
-            </div>
-            <div class="icon-label">My Computer</div>
+        <div class="desktop-icon" for="portfolioWindow" ">
+            <div class=" icon">
+            <img src="/win98/computer_explorer.ico" alt="My Computer">
         </div>
+        <div class="icon-label">My Computer</div>
+    </div>
 
-        <div id="portfolioWindow" class="window hidden" style="top: 70px; left: 120px;">
-            <div id="portfolioTitleBar1" class="title-bar inactive">
-                <div class="title-bar-text">
-                    <img src="/win98/computer_explorer-0.png" alt="My Computer">My Computer
-                </div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button aria-label="Restore" style="display: none;"></button>
-                    <button aria-label="Close"></button>
-                </div>
+    <!-- My Computer Icon -->
+    <div class="desktop-icon" for="portfolioWindow">
+        <div class="icon">
+            <img src="/win98/computer_explorer.ico" alt="My Computer">
+        </div>
+        <div class="icon-label">My Computer</div>
+    </div>
+
+    <div id="portfolioWindow" class="window hidden" style="top: 70px; left: 120px;">
+        <div id="portfolioTitleBar1" class="title-bar inactive">
+            <div class="title-bar-text">
+                <img src="/win98/computer_explorer-0.png" alt="My Computer">My Computer
             </div>
-            <div class="window-content">
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Restore" style="display: none;"></button>
+                <button aria-label="Close"></button>
             </div>
         </div>
-
-        <div id="portfolioWindow2" class="window hidden">
-            <div id="portfolioTitleBar2" class="title-bar inactive">
-                <div class="title-bar-text">My Portfolio 2</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button aria-label="Restore" style="display: none;"></button>
-                    <button aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="window-content">
-            </div>
+        <div class="window-content">
         </div>
     </div>
 
-    <div class="taskbar scanlines">
+    <div id="portfolioWindow2" class="window hidden">
+        <div id="portfolioTitleBar2" class="title-bar inactive">
+            <div class="title-bar-text">My Portfolio 2</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Restore" style="display: none;"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-content">
+        </div>
+    </div>
+    </div>
+
+    <div class="taskbar">
         <button class="start-button">
             <img src="/win98/windows-4.png" alt="Windows Logo"> Start
         </button>
@@ -248,8 +288,13 @@
             if (!event.target.closest('.window')) {
                 document.querySelectorAll('.window').forEach(win => {
                     const titleBar = win.querySelector('.title-bar');
+                    const taskbarButton = document.querySelector(`.taskbar-button[for="${win.id}"]`);
+
                     if (titleBar) {
                         titleBar.classList.add('inactive');
+                    }
+                    if (taskbarButton) {
+                        taskbarButton.classList.remove('active');
                     }
                 });
 
@@ -290,10 +335,13 @@
         function updateTitleBarClasses(activeWindow) {
             document.querySelectorAll('.window').forEach(win => {
                 const titleBar = win.querySelector('.title-bar');
+                const taskbarButton = document.querySelector(`.taskbar-button[for="${win.id}"]`);
                 if (win === activeWindow) {
                     titleBar.classList.remove('inactive');
+                    taskbarButton.classList.add('active'); // Add 'active' class
                 } else {
                     titleBar.classList.add('inactive');
+                    taskbarButton.classList.remove('active'); // Remove 'active' class
                 }
             });
         }
@@ -436,6 +484,7 @@
                 width: btnRect.width + 'px'
             }, function () {
                 win.style.display = 'none';
+                btn.classList.remove('active');
                 titleBarCopy.remove();
                 win.isMinimized = true;
             });
@@ -444,10 +493,11 @@
         function restoreWindow(win) {
             if (!win.isMinimized) return;
             const titleBar = win.querySelector('.title-bar');
-            titleBar.classList.remove('inactive');
 
             const btn = document.querySelector(`.taskbar-button[for="${win.id}"]`);
             const btnRect = btn.getBoundingClientRect();
+            titleBar.classList.remove('inactive');
+            btn.classList.add('active');
 
             const titleBarCopy = createTitleBarCopy(titleBar, btnRect);
             document.body.appendChild(titleBarCopy);
@@ -491,7 +541,7 @@
                 win.style.left = '0';
                 win.style.top = '0';
                 win.style.width = '100%';
-                win.style.height = `calc(100% - ${taskbarHeight}px)`;
+                win.style.height = `calc(100vh - ${taskbarHeight}px - 5px)`;
                 win.isMaximized = true;
                 updateWindowControls(win);
                 windowContent.style.display = '';
