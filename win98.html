@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>azOS</title>
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <link rel="stylesheet" href="/win98/scanlines-css.css">
@@ -359,6 +359,7 @@
             function startDragging(e) {
                 // Do not start dragging if clicking controls
                 if (e.target.closest('.title-bar-controls')) return;
+                if (win.isMaximized) return;
                 isDragging = true;
                 initialRect = win.getBoundingClientRect();
                 startCoords = getPointerCoords(e);
