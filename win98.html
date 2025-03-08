@@ -190,7 +190,7 @@
 <body class="scanlines">
     <div class="desktop">
         <!-- My Computer Icon -->
-        <div class="desktop-icon" for="portfolioWindow" ">
+        <div class="desktop-icon" for="myComputer" ">
             <div class=" icon">
             <img src="/win98/computer_explorer.ico" alt="My Computer">
         </div>
@@ -198,15 +198,15 @@
     </div>
 
     <!-- My Computer Icon -->
-    <div class="desktop-icon" for="portfolioWindow">
+    <div class="desktop-icon" for="myDocument">
         <div class="icon">
-            <img src="/win98/computer_explorer.ico" alt="My Computer">
+            <img src="/win98/directory_open_file_mydocs-1.png" alt="My Documents">
         </div>
-        <div class="icon-label">My Computer</div>
+        <div class="icon-label">My Documents</div>
     </div>
 
-    <div id="portfolioWindow" class="window hidden" style="top: 70px; left: 120px;">
-        <div id="portfolioTitleBar1" class="title-bar inactive">
+    <div id="myComputer" class="window hidden" style="top: 70px; left: 120px;">
+        <div class="title-bar inactive">
             <div class="title-bar-text">
                 <img src="/win98/computer_explorer-0.png" alt="My Computer">My Computer
             </div>
@@ -221,9 +221,11 @@
         </div>
     </div>
 
-    <div id="portfolioWindow2" class="window hidden">
-        <div id="portfolioTitleBar2" class="title-bar inactive">
-            <div class="title-bar-text">My Portfolio 2</div>
+    <div id="myDocument" class="window hidden">
+        <div class="title-bar inactive">
+            <div class="title-bar-text">
+                <img src="/win98/directory_open_file_mydocs_small-5.png" alt="My Documents">My Documents
+            </div>
             <div class="title-bar-controls">
                 <button aria-label="Minimize"></button>
                 <button aria-label="Maximize"></button>
@@ -244,15 +246,15 @@
         <div class="taskbar-divider"></div>
         <div class="taskbar-divider-handler"></div>
         <div class="taskbar-icon">
-            <img src="/win98/desktop_old-4.png" alt="My Computer">
+            <img src="/win98/desktop_old-4.png" alt="Show Desktop">
         </div>
         <div class="taskbar-divider"></div>
         <div class="taskbar-divider-handler"></div>
-        <button id="togglePortfolioBtn" for="portfolioWindow" class="taskbar-button hidden">
+        <button for="myComputer" class="taskbar-button hidden">
             <img src="/win98/computer_explorer-0.png" alt="My Computer">My Computer
         </button>
-        <button id="togglePortfolioBtn2" for="portfolioWindow2" class="taskbar-button hidden">Windows 98
-            Portfolio2</button>
+        <button for="myDocument" class="taskbar-button hidden">
+            <img src="/win98/directory_open_file_mydocs_small-5.png" alt="My Documents">My Documents</button>
     </div>
 
     <script>
