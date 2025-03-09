@@ -1,0 +1,205 @@
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+    background-color: #008080;
+    /* Classic Win98 teal background */
+    font-size: 24px;
+    image-rendering: pixelated;
+}
+
+.desktop {
+    height: calc(100% - 28px);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    /* Enable CSS Grid */
+    grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+    /* Create columns that fit the content */
+    grid-auto-columns: min-content;
+    /* Adjust rows to content height */
+    padding: 10px;
+    /* Add padding around the grid */
+    gap: 5px;
+    /* Add gap between grid items (icons) */
+}
+
+.window {
+    width: 400px;
+    position: absolute;
+}
+
+.window-content {
+    padding: 10px;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: silver;
+    border-top: 1px solid #C0C7C8;
+    /* First border */
+    box-shadow: inset 0 1px white;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.taskbar-divider {
+    width: 1px;
+    height: 22px;
+    background-color: #7c7c7c;
+    border-right: white 1px solid;
+    margin: 0 0 0 2px;
+}
+
+.taskbar-divider-handler {
+    width: 1px;
+    height: 16px;
+    background-color: silver;
+    border-top: white 1px solid;
+    border-left: white 1px solid;
+    border-right: #87888F 1px solid;
+    border-bottom: #87888F 1px solid;
+    padding-left: 0;
+    margin: 2px;
+}
+
+.start-button,
+.title-bar-text {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-weight: bold;
+}
+
+.start-button {
+    padding: 0 4px;
+    min-width: 50px;
+}
+
+.taskbar-app-area {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent buttons from wrapping */
+    overflow: hidden;
+    /* Hide overflowing buttons */
+    width: auto;
+    /* Adjust width dynamically */
+}
+
+.taskbar-button {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-left: 3px;
+    min-width: 50px;
+    width: 200px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.taskbar-button.active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+    text-shadow: 1px 1px #222;
+    background-image: url("/win98/checker.png");
+    background-repeat: repeat;
+}
+
+.taskbar-button.active img {
+    transform: translate(1px, 1px);
+    /* Move the icon when the button is active */
+}
+
+button:not(:disabled):active img {
+    transform: translate(1px, 1px);
+}
+
+.taskbar-icon {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 3px;
+    min-width: 20px;
+    min-height: 20px;
+    border: none;
+    /* Make flat by default */
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.taskbar-icon:hover {
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf
+}
+
+.taskbar-icon img {
+    height: 16px;
+    user-select: none;
+}
+
+.start-button img,
+.taskbar-button img {
+    height: 16px;
+    margin-right: 4px;
+    user-select: none;
+}
+
+.title-bar-text img {
+    height: 16px;
+    margin-right: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.title-bar {
+    user-select: none;
+}
+
+.desktop-icon {
+    width: 70px;
+    text-align: center;
+    /* position: relative;  Remove relative positioning */
+    color: white;
+    margin: 5px;
+    /* Keep the margin */
+}
+
+.desktop-icon .icon {
+    display: block;
+    /* width: 32px;
+    height: 32px; */
+    margin: auto;
+}
+
+.desktop-icon .icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.desktop-icon .icon-label {
+    font-size: 11px;
+}
+
+.highlighted-icon {
+    filter: sepia(100%) hue-rotate(180deg) saturate(2000%) brightness(0.6);
+
+}
+
+.highlighted-label {
+    background-color: rgb(0, 0, 168);
+    color: white;
+}
+
+.selected {
+    border: 1px dotted white;
+}
