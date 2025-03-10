@@ -1,4 +1,3 @@
-
 // Utility function to get pointer coordinates (supports mouse and touch)
 function getPointerCoords(e) {
     if (e.touches && e.touches.length) {
@@ -387,4 +386,37 @@ document.querySelectorAll('.desktop-icon').forEach(icon => {
             iconLabel.classList.add('selected');
         }
     });
+});
+
+function showStartMenu() {
+    const startMenu = document.getElementById('start-menu');
+    const startButton = document.querySelector('.start-button');
+    startMenu.classList.remove('hidden');
+    startButton.classList.add('active');
+}
+
+function hideStartMenu() {
+    const startMenu = document.getElementById('start-menu');
+    const startButton = document.querySelector('.start-button');
+    startMenu.classList.add('hidden');
+    startButton.classList.remove('active');
+}
+
+document.querySelector('.start-button').addEventListener('click', function () {
+    const startMenu = document.getElementById('start-menu');
+    if (startMenu.classList.contains('hidden')) {
+        showStartMenu();
+        startMenu.style.animationName = 'scrollUp';
+    } else {
+        hideStartMenu();
+        startMenu.style.animationName = '';
+    }
+});
+
+document.addEventListener('click', function (event) {
+    const startMenu = document.getElementById('start-menu');
+    const startButton = document.querySelector('.start-button');
+    if (!startMenu.classList.contains('hidden') && !startMenu.contains(event.target) && !startButton.contains(event.target)) {
+        hideStartMenu();
+    }
 });
