@@ -83,14 +83,16 @@ html {
     min-width: 50px;
 }
 
+.start-button.active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+    text-shadow: 1px 1px #222;
+}
+
 .taskbar-app-area {
     display: flex;
     flex-wrap: nowrap;
-    /* Prevent buttons from wrapping */
     overflow: hidden;
-    /* Hide overflowing buttons */
     width: auto;
-    /* Adjust width dynamically */
 }
 
 .taskbar-button {
@@ -99,7 +101,7 @@ html {
     margin: 0;
     padding-left: 3px;
     min-width: 50px;
-    width: 200px;
+    max-width: 200px;
     flex: 1;
     white-space: nowrap;
     overflow: hidden;
@@ -215,6 +217,9 @@ button:not(:disabled):active img {
     display: flex;
     align-items: stretch;
     overflow: hidden;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    pointer-events: auto;
 }
 
 .start-menu ul {
@@ -252,10 +257,16 @@ button:not(:disabled):active img {
     margin-right: 0;
 }
 
-.start-button.active {
-    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
-    text-shadow: 1px 1px #222;
-}
+.start-menu-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    overflow: hidden; 
+    pointer-events: none;
+  }
+
 
 .start-menu-divider {
     width: 146px;
@@ -273,19 +284,3 @@ button:not(:disabled):active img {
         transform: translateY(0);
     }
 }
-
-.start-menu {
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-    pointer-events: auto;
-}
-
-.start-menu-wrapper {
-    position: fixed;
-    top: 0;
-    bottom: 25px;
-    left: 0;
-    right: 0;
-    overflow: hidden; 
-    pointer-events: none;
-  }

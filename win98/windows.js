@@ -208,7 +208,7 @@ document.querySelectorAll('.taskbar-button').forEach(button => {
     });
 });
 
-function minimizeWindow(win) {
+function minimizeWindow(win, withoutAnimation = false) {
     if (win.isMinimized) return;
     const titleBar = win.querySelector('.title-bar');
     // Capture original dimensions
@@ -221,16 +221,24 @@ function minimizeWindow(win) {
     // Animate to taskbar button target
     const btn = document.querySelector(`.taskbar-button[for="${win.id}"]`);
     const btnRect = btn.getBoundingClientRect();
-    animateTransition(titleBarCopy, {
-        left: btnRect.left + 'px',
-        top: btnRect.top + 'px',
-        width: btnRect.width + 'px'
-    }, function () {
+
+    if (withoutAnimation) {
         win.style.display = 'none';
         btn.classList.remove('active');
         titleBarCopy.remove();
         win.isMinimized = true;
-    });
+    } else {
+        animateTransition(titleBarCopy, {
+            left: btnRect.left + 'px',
+            top: btnRect.top + 'px',
+            width: btnRect.width + 'px'
+        }, function () {
+            win.style.display = 'none';
+            btn.classList.remove('active');
+            titleBarCopy.remove();
+            win.isMinimized = true;
+        });
+    }
 }
 
 function restoreWindow(win) {
@@ -410,6 +418,23 @@ document.querySelector('.start-button').addEventListener('click', function () {
     } else {
         hideStartMenu();
         startMenu.style.animationName = '';
+    }
+});
+
+document.querySelector('.show-desktop').addEventListener('click', function () {
+    const windows = document.querySelectorAll('.window');
+    const allMinimized = Array.from(windows).every(win => win.isMinimized);
+
+    if (allMinimized) {
+        // Restore all windows
+        windows.forEach(win => {
+            restoreWindow(win);
+        });
+    } else {
+        // Minimize all windows
+        windows.forEach(win => {
+            minimizeWindow(win, true);
+        });
     }
 });
 

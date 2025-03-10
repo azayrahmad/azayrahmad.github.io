@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <link rel="stylesheet" href="/win98/scanlines-css.css">
     <link rel="stylesheet" href="/win98/windows.css">
+    <style>
+        .taskbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .taskbar-app-area {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .taskbar-clock {
+            padding-right: 10px;
+        }
+
+        .system-tray {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-bar-field {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 </head>
 
 <body class="scanlines">
@@ -78,7 +107,7 @@
         <div class="taskbar-divider"></div>
         <div class="taskbar-divider-handler"></div>
         <div class="taskbar-icon-area">
-            <button class="taskbar-icon">
+            <button class="taskbar-icon show-desktop">
                 <img src="/win98/desktop_old-4.png" alt="Show Desktop">
             </button>
         </div>
@@ -92,8 +121,26 @@
                 <img src="/win98/directory_open_file_mydocs_small-5.png" alt="My Documents">My Documents
             </button>
         </div>
+        <div class="system-tray">
+
+            <div class="taskbar-divider"></div>
+            <div class="taskbar-clock" title="">
+                <span id="clock"></span>
+            </div>
+        </div>
     </div>
 
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+            const dateString = now.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('clock').textContent = timeString;
+            document.querySelector('.taskbar-clock').title = dateString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
     <script src="/win98/windows.js"></script>
 </body>
 
