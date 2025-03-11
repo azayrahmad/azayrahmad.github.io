@@ -7,7 +7,7 @@ function getPointerCoords(e) {
 }
 
 // Common animation using a transition spec
-function animateTransition(element, targetStyles, callback, transitionSpec = 'left 0.2s steps(5, end), top 0.2s steps(5, end), width 0.2s steps(5, end)') {
+function animateTransition(element, targetStyles, callback, transitionSpec = 'left 0.25s ease, top 0.25s ease, width 0.25s ease') {
     element.style.transition = transitionSpec;
     // Force reflow so the transition applies immediately
     element.offsetWidth;
@@ -445,3 +445,14 @@ document.addEventListener('click', function (event) {
         hideStartMenu();
     }
 });
+
+
+function updateClock() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }).toLocaleUpperCase();
+    const dateString = now.toDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('clock').textContent = timeString;
+    document.querySelector('.taskbar-clock').title = dateString;
+}
+setInterval(updateClock, 1000);
+updateClock();
