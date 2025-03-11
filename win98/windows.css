@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'MSW98UI';
+    src: url('/win98/fonts/MSW98UI-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MSW98UI';
+    src: url('/win98/fonts/MSW98UI-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 :root {
     --background-teal: #008080;
     --background-gray: #C0C0C0;
@@ -22,7 +36,7 @@ html {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+    font-family: 'MSW98UI', sans-serif;
     background-color: var(--background-teal);
     /* Classic Win98 teal background */
     /* font-size: 24px; */
