@@ -45,16 +45,13 @@ function deactivateAllWindows(event) {
             document.querySelectorAll('.desktop-icon .icon img, .desktop-icon .icon-label').forEach(element => {
                 element.classList.remove('highlighted-icon', 'highlighted-label');
             });
-        }
-        else {
+        } else {
             // Remove highlight from all icons and icon-labels
             document.querySelectorAll('.desktop-icon .icon img, .desktop-icon .icon-label').forEach(element => {
                 element.classList.remove('highlighted-icon', 'highlighted-label', 'selected');
             });
         }
-    }
-    else {
-
+    } else {
         // Remove highlight from all icons and icon-labels
         document.querySelectorAll('.desktop-icon .icon img, .desktop-icon .icon-label').forEach(element => {
             element.classList.remove('highlighted-icon', 'highlighted-label', 'selected');
@@ -353,6 +350,7 @@ function createTitleBarCopy(titleBar, rect) {
     return copy;
 }
 
+// Desktop icon double-click to open window
 document.querySelectorAll('.desktop-icon').forEach(icon => {
     icon.addEventListener('dblclick', function () {
         const targetId = this.getAttribute('for');
@@ -376,6 +374,7 @@ document.querySelectorAll('.desktop-icon').forEach(icon => {
     });
 });
 
+// Desktop icon click to highlight
 document.querySelectorAll('.desktop-icon').forEach(icon => {
     icon.addEventListener('click', function () {
         // Remove highlight from all icons and icon-labels
@@ -396,6 +395,7 @@ document.querySelectorAll('.desktop-icon').forEach(icon => {
     });
 });
 
+// Start menu show/hide
 function showStartMenu() {
     const startMenu = document.getElementById('start-menu');
     const startButton = document.querySelector('.start-button');
@@ -421,6 +421,7 @@ document.querySelector('.start-button').addEventListener('click', function () {
     }
 });
 
+// Show desktop button functionality
 document.querySelector('.show-desktop').addEventListener('click', function () {
     const windows = document.querySelectorAll('.window');
     const allMinimized = Array.from(windows).every(win => win.isMinimized);
@@ -438,6 +439,7 @@ document.querySelector('.show-desktop').addEventListener('click', function () {
     }
 });
 
+// Hide start menu when clicking outside
 document.addEventListener('click', function (event) {
     const startMenu = document.getElementById('start-menu');
     const startButton = document.querySelector('.start-button');
@@ -446,7 +448,7 @@ document.addEventListener('click', function (event) {
     }
 });
 
-
+// Update clock in taskbar
 function updateClock() {
     const now = new Date();
     const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }).toLocaleUpperCase();
