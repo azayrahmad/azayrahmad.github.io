@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: window
 title: Lecturing
 permalink: /lecturing/
 ---
 
 ## Under Construction
+
 Come back later.

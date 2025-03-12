@@ -1,0 +1,71 @@
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+
+<div class="taskbar">
+    <button class="start-button">
+        <img src="/win98/icons/windows-4.png" alt="Windows Logo"> Start
+    </button>
+    <div class="start-menu-wrapper">
+        <div id="start-menu" class="start-menu hidden">
+            <div class="blue-rectangle"></div>
+            <ul class="start-menu-list">
+                <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
+                    <li>
+                        <img src="/win98/icons/computer_explorer.ico" alt="Computer">
+                        <span>{{ site.title | escape }}</span>
+                    </li>
+                </a>
+
+                <div class="start-menu-divider"></div>
+                {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+
+                <a href="{{ my_page.url | relative_url }}" style="text-decoration: none;">
+                    <li>
+                        <img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">
+                        <span>{{ my_page.title | escape }}</span>
+                    </li>
+                </a>
+                {%- endif -%}
+                {%- endfor -%}
+                <!-- <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Settings
+                </li>
+                <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Find
+                </li>
+                <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Help
+                </li>
+                <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Run
+                </li> -->
+                <div class="start-menu-divider"></div>
+                <li><img src="/win98/icons/key_win-4.png" alt="logoff">Log Off Guest...</li>
+                <li><img src="/win98/icons/shut_down_normal-0.png" alt="shutdown">Shut Down...</li>
+            </ul>
+        </div>
+    </div>
+    <div class="taskbar-divider"></div>
+    <div class="taskbar-divider-handler"></div>
+    <div class="taskbar-icon-area">
+        <button class="taskbar-icon show-desktop">
+            <img src="/win98/icons/desktop_old-4.png" alt="Show Desktop">
+        </button>
+    </div>
+    <div class="taskbar-divider"></div>
+    <div class="taskbar-divider-handler"></div>
+    <div class="taskbar-app-area">
+        <button for="myComputer" class="taskbar-button hidden">
+            <img src="/win98/icons/computer_explorer-0.png" alt="My Computer">My Computer
+        </button>
+        <button for="myDocument" class="taskbar-button hidden">
+            <img src="/win98/icons/directory_open_file_mydocs_small-5.png" alt="My Documents">My Documents
+        </button>
+    </div>
+    <div class="taskbar-divider"></div>
+    <div class="system-tray">
+        <img src="/win98/icons/SYSTRAY_220.ico" alt="Volume">
+        <div class="taskbar-clock" title="">
+            <span id="clock"></span>
+        </div>
+    </div>
+</div>
