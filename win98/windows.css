@@ -120,7 +120,7 @@ body, html {
 /* Media query for vertical/mobile screens */
 @media (orientation: portrait) {
     .gif-screen img {
-        height: 100vh; /* Force full height */
+        height: 100%; /* Force full height */
         width: auto;   /* Maintain aspect ratio */
         max-width: none; /* Allow cropping on sides */
         object-fit: cover; /* Cover the container */
