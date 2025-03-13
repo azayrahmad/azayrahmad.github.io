@@ -40,6 +40,13 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'IBM BIOS';
+    src: url('/win98/fonts/Web437_IBM_BIOS.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
   
 
 :root {
@@ -68,6 +75,41 @@ body, html {
     font-family: 'MSW98UI', sans-serif;
     background-color: var(--background-teal);
     image-rendering: pixelated;
+}
+
+.boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    font-family: 'IBM BIOS', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    z-index: 9999;
+    font-size: small;
+}
+
+.gif-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.gif-screen img {
+    height: 100vh;
+    width: auto;
 }
 
 .app-container {

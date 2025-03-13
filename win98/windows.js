@@ -1,3 +1,5 @@
+let highestZIndex = 100; // starting z-index
+
 // Utility function to get pointer coordinates (supports mouse and touch)
 function getPointerCoords(e) {
     if (e.touches && e.touches.length) {
@@ -19,8 +21,6 @@ function animateTransition(element, targetStyles, callback, transitionSpec = 'le
         callback();
     });
 }
-
-let highestZIndex = 100; // starting z-index
 
 // Deactivate all windows when clicking (or tapping) outside them.
 document.addEventListener('mousedown', deactivateAllWindows);
