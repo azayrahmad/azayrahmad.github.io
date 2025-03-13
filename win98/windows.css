@@ -118,7 +118,7 @@ body, html {
     overflow: auto; 
     height: calc(100% - 30px); 
     max-height: none; 
-    width: 100%; s
+    width: 100%;
     box-sizing: border-box;
 }
 
