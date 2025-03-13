@@ -138,10 +138,20 @@ function makeWindowDraggable(win) {
     function stopDragging() {
         if (!isDragging) return;
         isDragging = false;
+
         if (dragOutline) {
+            // Get initial dimensions to preserve
+            const initialWidth = win.offsetWidth;
+
+            // Position the window
             win.style.position = 'absolute';
             win.style.left = dragOutline.style.left;
             win.style.top = dragOutline.style.top;
+
+            // Ensure width is preserved
+            win.style.width = initialWidth + 'px';
+
+            // Remove outline
             dragOutline.parentElement.removeChild(dragOutline);
             dragOutline = null;
         }
