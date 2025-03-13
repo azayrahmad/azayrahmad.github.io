@@ -88,10 +88,12 @@ body, html {
     font-family: 'IBM BIOS', monospace;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: flex-end;
     align-items: left;
     text-align: left;
     z-index: 9999;
+    overflow: hidden;
+    padding-bottom: 10vh;
     font-size: small;
 }
 
@@ -106,10 +108,23 @@ body, html {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    pointer-events: none;
+    overflow: hidden;
 }
 .gif-screen img {
-    height: 100vh;
-    width: auto;
+    /* For horizontal screens (computers) */
+    max-height: 100vh;
+    object-fit: contain; /* Changed from cover to contain */
+}
+
+/* Media query for vertical/mobile screens */
+@media (orientation: portrait) {
+    .gif-screen img {
+        height: 100vh; /* Force full height */
+        width: auto;   /* Maintain aspect ratio */
+        max-width: none; /* Allow cropping on sides */
+        object-fit: cover; /* Cover the container */
+    }
 }
 
 .app-container {
