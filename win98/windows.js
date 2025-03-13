@@ -280,26 +280,52 @@ function restoreWindow(win) {
 
 function maximizeWindow(win) {
     if (win.isMaximized) return;
-    const taskbarHeight = document.querySelector('.taskbar').offsetHeight;
+
     const titleBar = win.querySelector('.title-bar');
     const windowContent = win.querySelector('.window-content');
+    const desktopArea = document.getElementById('desktop-area');
+
+    // Store original dimensions for later restoration
     win.originalTitleBarRect = titleBar.getBoundingClientRect();
     win.originalWindowRect = win.getBoundingClientRect();
+
+    // Hide content during animation
     windowContent.style.display = 'none';
 
     const titleBarCopy = createTitleBarCopy(titleBar, win.originalTitleBarRect);
     document.body.appendChild(titleBarCopy);
 
+    // Get desktop area dimensions
+    const desktopRect = desktopArea.getBoundingClientRect();
+
     animateTransition(titleBarCopy, {
-        left: '0',
-        top: '0',
-        width: '100%'
+        left: desktopRect.left + 'px',
+        top: desktopRect.top + 'px',
+        width: desktopRect.width + 'px'
     }, function () {
-        win.style.position = 'fixed';
-        win.style.left = '0';
-        win.style.top = '0';
-        win.style.width = '100%';
-        win.style.height = `calc(100vh - ${taskbarHeight}px - 5px)`;
+        // Get window computed styles to account for borders
+        const computedStyle = window.getComputedStyle(win);
+        const borderTopWidth = parseInt(computedStyle.borderTopWidth, 10) || 0;
+        const borderRightWidth = parseInt(computedStyle.borderRightWidth, 10) || 0;
+        const borderBottomWidth = parseInt(computedStyle.borderBottomWidth, 10) || 0;
+        const borderLeftWidth = parseInt(computedStyle.borderLeftWidth, 10) || 0;
+
+        // Calculate dimensions that will fit inside desktop area
+        const adjustedWidth = desktopRect.width - borderLeftWidth - borderRightWidth;
+        const adjustedHeight = desktopRect.height - borderTopWidth - borderBottomWidth;
+
+        // Set window position and size to fit exactly within desktop area
+        win.style.position = 'absolute';
+        win.style.left = borderLeftWidth + 'px';
+        win.style.top = borderTopWidth + 'px';
+        win.style.width = adjustedWidth + 'px';
+        win.style.height = adjustedHeight + 'px';
+
+        // Make sure the window is a direct child of desktop area for proper positioning
+        if (win.parentElement !== desktopArea) {
+            desktopArea.appendChild(win);
+        }
+
         win.isMaximized = true;
         updateWindowControls(win);
         windowContent.style.display = '';
@@ -309,23 +335,36 @@ function maximizeWindow(win) {
 
 function restoreFromMaximized(win) {
     if (!win.isMaximized) return;
+
     const titleBar = win.querySelector('.title-bar');
     const windowContent = win.querySelector('.window-content');
+    const desktopArea = document.getElementById('desktop-area');
+
     windowContent.style.display = 'none';
 
-    const titleBarCopy = createTitleBarCopy(titleBar, { left: 0, top: 0, width: window.innerWidth });
+    const desktopRect = desktopArea.getBoundingClientRect();
+    const titleBarCopy = createTitleBarCopy(titleBar, {
+        left: desktopRect.left,
+        top: desktopRect.top,
+        width: desktopRect.width
+    });
     document.body.appendChild(titleBarCopy);
 
     animateTransition(titleBarCopy, {
-        left: win.originalTitleBarRect.left + 'px',
-        top: win.originalTitleBarRect.top + 'px',
-        width: win.originalTitleBarRect.width + 'px'
+        left: win.originalWindowRect.left + 'px',
+        top: win.originalWindowRect.top + 'px',
+        width: win.originalWindowRect.width + 'px'
     }, function () {
+        // Move window back to the desktop container (not the desktop-area)
+        document.querySelector('.desktop').appendChild(win);
+
+        // Restore original position and size
         win.style.position = 'absolute';
         win.style.left = win.originalWindowRect.left + 'px';
         win.style.top = win.originalWindowRect.top + 'px';
         win.style.width = win.originalWindowRect.width + 'px';
         win.style.height = win.originalWindowRect.height + 'px';
+
         win.isMaximized = false;
         updateWindowControls(win);
         windowContent.style.display = '';

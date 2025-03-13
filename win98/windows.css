@@ -60,44 +60,56 @@
     --icon-label-font-size: 11px;
 }
 
-body,
-html {
+body, html {
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: 'MSW98UI', sans-serif;
     background-color: var(--background-teal);
-    /* Classic Win98 teal background */
-    /* font-size: 24px; */
     image-rendering: pixelated;
 }
 
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.desktop-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    /* Add padding inside to create space for window borders */
+    padding: 4px; 
+    box-sizing: border-box;
+}
+
 .desktop {
-    height: calc(100% - 28px);
+    height: 100%;
+    width: 100%;
     position: relative;
     overflow: hidden;
     display: grid;
-    /* Enable CSS Grid */
     grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
-    /* Create columns that fit the content */
     grid-auto-columns: min-content;
-    /* Adjust rows to content height */
     padding: 10px;
-    /* Add padding around the grid */
     gap: 5px;
-    /* Add gap between grid items (icons) */
 }
 
 .window {
     min-width: 400px;
-    max-width: 100vw; /* Ensure the window does not exceed the screen width */
-    max-height: calc(100vh - 28px); /* Ensure the window does not exceed the screen height minus the taskbar height */
+    max-width: 100vw;
+    max-height: 100%;
     position: absolute;
-    overflow: hidden; /* Hide overflow to ensure scrollbars are inside the window */
+    overflow: hidden;
     z-index: 1000;
     top: 90px;
     left: 150px;
+    /* Ensure borders are included in the element's total width/height */
+    box-sizing: border-box;
 }
 
 .window-content {
@@ -114,17 +126,17 @@ html {
 }
 
 .taskbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative; /* Change from fixed to relative */
     width: 100%;
+    height: 28px; /* Fixed height for taskbar */
     background: var(--background-gray);
     border-top: 1px solid var(--border-light);
-    /* First border */
     box-shadow: inset 0 1px white;
     padding: 2px;
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* Prevent taskbar from shrinking */
+    z-index: 1000; /* Keep taskbar above other elements */
 }
 
 .taskbar-divider {

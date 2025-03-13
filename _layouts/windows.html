@@ -4,9 +4,12 @@
 {%- include head.html -%}
 
 <body class="scanlines">
-    {%- include desktop.html -%}
-
-    {%- include taskbar.html -%}
+    <div class="app-container">
+        <div id="desktop-area" class="desktop-area">
+            {%- include desktop.html -%}
+        </div>
+        {%- include taskbar.html -%}
+    </div>
     <script src="/win98/windows.js"></script>
 </body>
 
