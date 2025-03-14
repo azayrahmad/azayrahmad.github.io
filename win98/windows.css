@@ -71,7 +71,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'MSW98UI', sans-serif;
     background-color: var(--background-teal);
     image-rendering: pixelated;
@@ -250,17 +250,20 @@ body, html {
 }
 
 .taskbar {
-    position: sticky;
+    position: fixed;         /* Changed from sticky to fixed */
+    bottom: 0;               /* Ensure it's pinned to the bottom */
+    left: 0;
     width: 100%;
-    height: 28px; /* Fixed height for taskbar */
+    height: 28px;
     background: var(--background-gray);
     border-top: 1px solid var(--border-light);
     box-shadow: inset 0 1px white;
     padding: 2px;
     display: flex;
     align-items: center;
-    flex-shrink: 0; /* Prevent taskbar from shrinking */
-    z-index: 1000; /* Keep taskbar above other elements */
+    flex-shrink: 0;
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom); /* Ensures the taskbar isn’t obscured on mobile */
 }
 
 .taskbar-divider {
