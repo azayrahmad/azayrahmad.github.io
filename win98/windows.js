@@ -75,13 +75,13 @@ function updateTitleBarClasses(activeWindow) {
     document.querySelectorAll('.window').forEach(win => {
         const titleBar = win.querySelector('.title-bar');
         const taskbarButton = document.querySelector(`.taskbar-button[for="${win.id}"]`);
-        if (titleBar && taskbarButton) {
+        if (titleBar || taskbarButton) {
             if (win === activeWindow) {
-                titleBar.classList.remove('inactive');
-                taskbarButton.classList.add('active'); // Add 'active' class
+                if (titleBar) titleBar.classList.remove('inactive');
+                if (taskbarButton) taskbarButton.classList.add('active'); // Add 'active' class
             } else {
-                titleBar.classList.add('inactive');
-                taskbarButton.classList.remove('active'); // Remove 'active' class
+                if (titleBar) titleBar.classList.add('inactive');
+                if (taskbarButton) taskbarButton.classList.remove('active'); // Remove 'active' class
             }
         }
     });
