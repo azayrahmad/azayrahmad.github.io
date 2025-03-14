@@ -403,26 +403,7 @@ function createTitleBarCopy(titleBar, rect) {
 
 // Desktop icon double-click to open window
 document.querySelectorAll('.desktop-icon').forEach(icon => {
-    icon.addEventListener('dblclick', function () {
-        const targetId = this.getAttribute('for');
-        const win = document.getElementById(targetId);
-        if (win) {
-            win.classList.remove('hidden');
-            const titleBar = win.querySelector('.title-bar');
-            if (titleBar) {
-                titleBar.classList.remove('inactive');
-            }
-            highestZIndex++;
-            win.style.zIndex = highestZIndex;
-            updateTitleBarClasses(win);
-
-            // Remove hidden class from the corresponding taskbar button
-            const taskbarButton = document.querySelector(`.taskbar-button[for="${targetId}"]`);
-            if (taskbarButton) {
-                taskbarButton.classList.remove('hidden');
-            }
-        }
-    });
+    icon.addEventListener('dblclick', OpenApp);
 });
 
 // Desktop icon click to highlight
@@ -511,3 +492,36 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+// Start menu click to open window
+document.querySelectorAll('.start-menu-item').forEach(icon => {
+    icon.addEventListener('click', function (event) {
+        OpenApp(event);
+        hideStartMenu(); // Call hideStartMenu after the handler function
+    });
+});
+
+// Extract the event handler function
+function OpenApp(event) {
+    const icon = event.currentTarget;
+    const targetId = icon.getAttribute('for');
+    const win = document.getElementById(targetId);
+
+    if (win) {
+        win.classList.remove('hidden');
+        const titleBar = win.querySelector('.title-bar');
+        if (titleBar) {
+            titleBar.classList.remove('inactive');
+        }
+        highestZIndex++;
+        win.style.zIndex = highestZIndex;
+        updateTitleBarClasses(win);
+
+        // Remove hidden class from the corresponding taskbar button
+        const taskbarButton = document.querySelector(`.taskbar-button[for="${targetId}"]`);
+        if (taskbarButton) {
+            taskbarButton.classList.remove('hidden');
+        }
+        hideStartMenu();
+    }
+}

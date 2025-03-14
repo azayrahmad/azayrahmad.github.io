@@ -1,33 +1,22 @@
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+
 <div class="desktop">
-    <div class="desktop-icon" for="myComputer" ">
-        <div class=" icon">
-        <img src="/win98/icons/computer_explorer.ico" alt="My Computer">
-    </div>
-    <div class="icon-label">My Computer</div>
-</div>
 
-<div class="desktop-icon" for="myDocument">
-    <div class="icon">
-        <img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">
-    </div>
-    <div class="icon-label">My Documents</div>
-</div>
-
-<div id="myComputer" class="window hidden" style="top: 70px; left: 120px;">
-    <div class="title-bar inactive">
-        <div class="title-bar-text">
-            <img src="/win98/icons/computer_explorer-0.png" alt="My Computer">My Computer
+    {%- for path in page_paths -%}
+    {%- assign my_page = site.pages | where: "path", path | first -%}
+    {%- if my_page.title -%}
+    <div class="desktop-icon" for="{{ my_page.url | relative_url }}">
+        <div class="icon">
+            <img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">
         </div>
-        <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button aria-label="Restore" style="display: none;"></button>
-            <button aria-label="Close"></button>
-        </div>
+        <div class="icon-label">{{ my_page.title | escape
+            }}</div>
     </div>
-    <div class="window-content">
-    </div>
-</div>
 
-{{ content }}
+
+    {%- endif -%}
+    {%- endfor -%}
+
+    {{ content }}
 </div>

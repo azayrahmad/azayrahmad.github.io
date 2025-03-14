@@ -20,20 +20,13 @@
                 {%- assign my_page = site.pages | where: "path", path | first -%}
                 {%- if my_page.title -%}
 
-                <li onclick="location.href='{{ my_page.url | relative_url }}'">
+                <li class="start-menu-item" for="{{ my_page.url | relative_url }}">
                     <img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">
                     <span>{{ my_page.title | escape }}</span>
                 </li>
                 {%- endif -%}
                 {%- endfor -%}
-                <!-- <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Settings
-                </li>
-                <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Find
-                </li>
-                <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Help
-                </li>
-                <li><img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">Run
-                </li> -->
+
                 <div class="start-menu-divider"></div>
                 <li><img src="/win98/icons/key_win-4.png" alt="logoff">Log Off Guest...</li>
                 <li><img src="/win98/icons/shut_down_normal-0.png" alt="shutdown">Shut Down...</li>
@@ -56,12 +49,16 @@
     <div class="taskbar-divider"></div>
     <div class="taskbar-divider-handler"></div>
     <div class="taskbar-app-area">
-        <button for="myComputer" class="taskbar-button hidden">
-            <img src="/win98/icons/computer_explorer-0.png" alt="My Computer">My Computer
+
+        {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <button for="{{ my_page.url | relative_url }}" class="taskbar-button hidden">
+            <img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Computer">{{ my_page.title | escape }}
         </button>
-        <button for="myDocument" class="taskbar-button active">
-            <img src="/win98/icons/directory_open_file_mydocs_small-5.png" alt="My Documents">My Documents
-        </button>
+        {%- endif -%}
+        {%- endfor -%}
+
     </div>
     <div class="taskbar-divider"></div>
     <div class="system-tray">
