@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const gifScreen = document.getElementById("gif-screen");
     const progress = document.getElementById("progress");
     const assetList = document.getElementById("asset-list");
-    const continueText = document.getElementById("continue-text");
     const bootSound = document.getElementById("boot-sound");
     const appContainer = document.getElementById("app-container");
 
@@ -27,9 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
             assetList.appendChild(assetItem);
         }
         if (loaded >= assets.length) {
-            continueText.classList.remove("hidden");
-            document.addEventListener("keydown", proceedToGifScreen);
-            document.addEventListener("click", proceedToGifScreen);
+            // continueText.classList.remove("hidden");
+            // document.addEventListener("keydown", proceedToGifScreen);
+            // document.addEventListener("click", proceedToGifScreen);
+            proceedToGifScreen();
         }
     }
 
@@ -59,15 +59,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function proceedToGifScreen() {
-        document.removeEventListener("keydown", proceedToGifScreen);
-        document.removeEventListener("click", proceedToGifScreen);
+        // document.removeEventListener("keydown", proceedToGifScreen);
+        // document.removeEventListener("click", proceedToGifScreen);
         bootScreen.style.display = "none";
         gifScreen.classList.remove("hidden");
         setTimeout(() => {
-            gifScreen.style.display = "none";
+            document.getElementById("gif-screen").classList.add("hidden");
+            document.getElementById("login-screen").classList.remove("hidden");
+        }, 2000);
+
+        document.getElementById("login-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Optionally, add validation or authentication code here
+
+            // Redirect to the main page (change "index.html" to your target)
+
+            document.getElementById("login-screen").classList.add("hidden");
             bootSound.play();
             appContainer.classList.remove("hidden");
-        }, 2000);
+        });
     }
 
     loadAssets();

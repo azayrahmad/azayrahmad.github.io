@@ -3,11 +3,54 @@
     <div id="progress"></div>
     <div id="asset-list"></div>
     <div id="countdown"></div>
-    <div id="continue-text" class="hidden">Press any key to continue...</div>
+    <!-- <div id="continue-text" class="hidden">Press any key to continue...</div> -->
 </div>
 
 <div id="gif-screen" class="gif-screen hidden">
     <img src="/win98/loading_win98.gif" alt="Boot Animation" loop>
 </div>
+
+<!-- New login screen -->
+<div id="login-screen" class="login-screen hidden">
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">Welcome to Windows</div>
+            <div class="title-bar-controls">
+                <button aria-label="Help"></button>
+                <button aria-label="Close" disabled></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <form id="login-form">
+                <div class="login-columns">
+                    <!-- Left column: Icon -->
+                    <div class="login-col icon-col">
+                        <img src="/win98/icons/key_win_alt.ico" alt="Key Win Alt" />
+                    </div>
+                    <!-- Center column: Instruction + Form Fields -->
+                    <div class="login-col form-col">
+                        <p>Type a user name and password to log on to Windows</p>
+                        <div class="fields">
+                            <div class="field-row">
+                                <label for="username">User Name:</label>
+                                <input id="username" type="text" value="Guest" />
+                            </div>
+                            <div class="field-row">
+                                <label for="password">Password:</label>
+                                <input id="password" type="password" value="password" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right column: Buttons -->
+                    <div class="login-col buttons-col">
+                        <button type="submit" autofocus>OK</button>
+                        <button>Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <audio id="boot-sound" src="/win98/The Microsoft Sound.wav"></audio>

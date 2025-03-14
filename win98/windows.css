@@ -127,6 +127,74 @@ body, html {
     }
 }
 
+.login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10000;
+}
+
+.login-screen .window {
+    
+    top: 20%;
+}
+
+.login-screen form, .login-screen p
+    {
+    font-family: 'MSW98UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Container for the three columns */
+.login-columns {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Ensures top alignment */
+  }
+  
+  /* Left column (icon): width based on the image size */
+  .icon-col {
+    margin-right: 12px; /* spacing between columns */
+  }
+  
+  /* Center column: takes available space */
+  .form-col {
+    flex-grow: 1;
+  }
+  
+  /* For the fields: layout the label and input on the same line */
+  .fields .field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Optionally, set a fixed width for labels */
+  .field-row label {
+    width: 70px;
+    margin-right: 0.5em;
+  }
+  
+  /* Right column (buttons): width based on button width */
+  .buttons-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 1em;
+  }
+
+  .buttons-col button {
+    margin: 2px;
+  }
+  
+
 .app-container {
     display: flex;
     flex-direction: column;
@@ -151,8 +219,6 @@ body, html {
     position: absolute;
     overflow: hidden;
     z-index: 1000;
-    top: 90px;
-    left: 150px;
     /* Ensure borders are included in the element's total width/height */
     box-sizing: border-box;
 }
@@ -429,7 +495,7 @@ button:not(:disabled):active img {
 .start-menu-divider {
     width: 146px;
     height: 1px;
-    background-color:var(shadow-medium-dark);
+    background-color:var(--shadow-medium-dark);
     border-bottom: var(--border-white) 1px solid;
     margin: 0 3px;
 }
