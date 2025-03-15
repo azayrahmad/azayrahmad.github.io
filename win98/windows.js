@@ -506,8 +506,10 @@ function OpenApp(event) {
     const icon = event.currentTarget;
     const targetId = icon.getAttribute('for');
     const win = document.getElementById(targetId);
+    const windowContent = win.querySelector('.window-content');
 
     if (win) {
+        windowContent.style.height = '80vh';
         win.classList.remove('hidden');
         const titleBar = win.querySelector('.title-bar');
         if (titleBar) {
@@ -522,6 +524,5 @@ function OpenApp(event) {
         if (taskbarButton) {
             taskbarButton.classList.remove('hidden');
         }
-        hideStartMenu();
     }
 }

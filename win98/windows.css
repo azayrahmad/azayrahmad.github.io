@@ -204,12 +204,13 @@ body, html {
 }
 
 .desktop-area {
-    flex: 1;
+    
     position: relative;
     overflow: hidden;
     /* Add padding inside to create space for window borders */
     padding: 4px; 
     box-sizing: border-box;
+    height: calc(100vh - 28px - env(safe-area-inset-bottom) - 2px); /* Adjust height dynamically */
 }
 
 .window {
