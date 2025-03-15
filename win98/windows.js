@@ -509,7 +509,7 @@ function OpenApp(event) {
     const windowContent = win.querySelector('.window-content');
 
     if (win) {
-        windowContent.style.height = '80vh';
+        windowContent.style.height = '90vh';
         win.classList.remove('hidden');
         const titleBar = win.querySelector('.title-bar');
         if (titleBar) {

@@ -240,7 +240,6 @@ body, html {
     font-family: 'Tex Gyre Heros', Helvetica, Arial, sans-serif;
     padding: 10px;
     overflow: auto; 
-    height: calc(100% - 30px); 
     max-height: none; 
     width: 100%;
     box-sizing: border-box;
