@@ -1,5 +1,4 @@
 ---
-layout: window
 title: Lecturing
 permalink: /lecturing/
 ---

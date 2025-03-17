@@ -1,5 +1,4 @@
 ---
-layout: window
 title: About
 permalink: /about/
 ---

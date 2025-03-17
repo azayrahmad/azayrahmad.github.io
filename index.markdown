@@ -5,10 +5,6 @@
 layout: window
 ---
 
-<style type="text/css" media="screen">
-  
-</style>
-
 <div class="container">
   <div class="profile-section fade-in">
     <!-- <img src="/assets/img/azayrahmad-qrcode.png" alt="Aziz Rahmad" class="profile-image blur-in"> -->
@@ -40,12 +36,5 @@ layout: window
         <p class="skill-description">Designing robust and maintainable software systems with expertise in microservices, domain-driven design, and cloud architecture.</p>
       </div>
     </div>
-  </div>
-
-  <div class="contact-links fade-in">
-    <a href="mailto:azayrahmad@gmail.com" class="contact-link">Email</a>
-    <a href="https://www.linkedin.com/in/aziz-rahmad" class="contact-link">LinkedIn</a>
-    <a href="/resume" class="contact-link">Resume</a>
-    <a href="/win98" class="contact-link">Try Win98</a>
   </div>
 </div>

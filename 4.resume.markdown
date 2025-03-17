@@ -1,5 +1,4 @@
 ---
-layout: window
 title: Resume
 permalink: /resume/
 ---

@@ -1,24 +1,10 @@
 ---
 layout: windows
 ---
-
-{%- assign default_paths = site.pages | map: "path" -%}
-{%- assign page_paths = site.header_pages | default: default_paths -%}
-{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-
-{%- for path in page_paths -%}
-{%- assign my_page = site.pages | where: "path", path | first -%}
-{%- if my_page.title -%}
-
-<!-- <div id="{{ my_page.url | relative_url }}" class="window hidden" style="top: 30px; left: 50px;">
+<div class="window" style="top: 30px; left: 50px; height: auto;">
     <div class="title-bar">
         <div class="title-bar-text">
-            {% if my_page.icon %}
-            <img src="{{ my_page.icon }}" alt="Icon">
-            {% else %}
-            <img src="/win98/icons/SHELL32_3.ico" alt="My Documents">
-            {% endif %}
-            {{ my_page.title | escape }}
+            <img src="/win98/icons/SHELL32_3.ico" alt="My Documents">Home
         </div>
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -27,12 +13,9 @@ layout: windows
             <button aria-label="Close"></button>
         </div>
     </div>
-    <div class="window-content">
+    <div class="window-content" style="height: 100vh;">
         <ul class="tree-view">
-            {{ my_page.content }}
+            {{ content }}
         </ul>
     </div>
-</div> -->
-
-{%- endif -%}
-{%- endfor -%}
+</div>

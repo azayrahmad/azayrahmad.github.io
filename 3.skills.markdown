@@ -1,5 +1,4 @@
 ---
-layout: window
 title: Skills
 permalink: /skills/
 ---
