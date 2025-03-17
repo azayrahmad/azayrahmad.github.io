@@ -2,6 +2,7 @@
 layout: window
 title: Projects
 permalink: /projects/
+icon: /win98/icons/computer_explorer-0.png
 ---
 
 ## Professional Projects

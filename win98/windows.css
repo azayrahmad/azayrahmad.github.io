@@ -204,7 +204,7 @@ body, html {
 }
 
 .desktop-area {
-    
+    top: env(safe-area-inset-top); /* Ensure it doesn’t get cropped */
     position: relative;
     overflow: hidden;
     /* Add padding inside to create space for window borders */

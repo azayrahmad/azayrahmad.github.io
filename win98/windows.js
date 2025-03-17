@@ -206,6 +206,8 @@ document.querySelectorAll('.taskbar-button').forEach(button => {
         const targetId = event.target.getAttribute('for');
         const win = document.getElementById(targetId);
         if (win.isMinimized) {
+            highestZIndex++;
+            win.style.zIndex = highestZIndex;
             restoreWindow(win);
         } else if (win.style.zIndex == highestZIndex) {
             minimizeWindow(win);
@@ -524,5 +526,115 @@ function OpenApp(event) {
         if (taskbarButton) {
             taskbarButton.classList.remove('hidden');
         }
+    }
+}
+
+function CreateAndOpenApp(event) {
+    const icon = event.currentTarget;
+    const windowId = icon.getAttribute('data-window-id') || `window-${Date.now()}`;
+    const windowTitle = icon.getAttribute('data-title') || 'New Window';
+    const windowIcon = icon.getAttribute('data-icon') || '/win98/icons/directory_open_file_mydocs_small-5.png';
+    const windowContent = icon.getAttribute('data-content') || '';
+
+    // Check if window already exists (optional, to prevent duplicates)
+    const existingWindow = document.getElementById(windowId);
+    if (existingWindow) {
+        // If you want to bring existing window to front instead of creating duplicate
+        existingWindow.classList.remove('hidden');
+        highestZIndex++;
+        existingWindow.style.zIndex = highestZIndex;
+        updateTitleBarClasses(existingWindow);
+        return;
+    }
+
+    // Create new window element
+    const newWindow = document.createElement('div');
+    newWindow.id = windowId;
+    newWindow.className = 'window';
+
+    // Position the window with slight randomization for cascade effect
+    const topPosition = 30 + (Math.random() * 60);
+    const leftPosition = 50 + (Math.random() * 100);
+    newWindow.style.top = `${topPosition}px`;
+    newWindow.style.left = `${leftPosition}px`;
+
+    // Set highest z-index
+    highestZIndex++;
+    newWindow.style.zIndex = highestZIndex;
+
+    // Create window structure
+    newWindow.innerHTML = `
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="${windowIcon}" alt="Icon">${windowTitle}
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Restore" style="display: none;"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-content" style="height: 90vh;">
+            ${windowContent}
+        </div>
+    `;
+
+    // Add to document
+    document.body.appendChild(newWindow);
+
+    // Setup event listeners for window controls
+    setupWindowControls(newWindow);
+
+    // Update title bar classes to show this as active window
+    updateTitleBarClasses(newWindow);
+}
+
+// Helper function to setup window controls (minimize, maximize, close)
+function setupWindowControls(windowElement) {
+    const closeButton = windowElement.querySelector('button[aria-label="Close"]');
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            windowElement.remove();
+        });
+    }
+
+    const maximizeButton = windowElement.querySelector('button[aria-label="Maximize"]');
+    const restoreButton = windowElement.querySelector('button[aria-label="Restore"]');
+    if (maximizeButton && restoreButton) {
+        maximizeButton.addEventListener('click', () => {
+            // Implement maximize functionality
+            windowElement.style.top = '0';
+            windowElement.style.left = '0';
+            windowElement.style.width = '100%';
+            windowElement.style.height = '100%';
+            maximizeButton.style.display = 'none';
+            restoreButton.style.display = 'block';
+        });
+
+        restoreButton.addEventListener('click', () => {
+            // Implement restore functionality
+            windowElement.style.top = `${30 + (Math.random() * 60)}px`;
+            windowElement.style.left = `${50 + (Math.random() * 100)}px`;
+            windowElement.style.width = '';
+            windowElement.style.height = '';
+            maximizeButton.style.display = 'block';
+            restoreButton.style.display = 'none';
+        });
+    }
+
+    // Make window draggable (simplified version)
+    const titleBar = windowElement.querySelector('.title-bar');
+    if (titleBar) {
+        titleBar.addEventListener('mousedown', function (e) {
+            // On click, bring window to front
+            highestZIndex++;
+            windowElement.style.zIndex = highestZIndex;
+            updateTitleBarClasses(windowElement);
+
+            // Dragging functionality would go here
+            // (This is simplified - a complete implementation would track
+            // mouse movement and update position accordingly)
+        });
     }
 }
