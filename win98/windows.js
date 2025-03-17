@@ -428,10 +428,8 @@ document.querySelectorAll('.desktop-icon').forEach(icon => {
 function showStartMenu() {
     const startMenu = document.getElementById('start-menu');
     const startButton = document.querySelector('.start-button');
-    const taskbar = document.querySelector('.taskbar');
     startMenu.classList.remove('hidden');
     startButton.classList.add('active');
-    taskbar.style.zIndex = highestZIndex + 1;
 }
 
 function hideStartMenu() {
@@ -440,6 +438,11 @@ function hideStartMenu() {
     startMenu.classList.add('hidden');
     startButton.classList.remove('active');
 }
+
+document.querySelector('.taskbar').addEventListener('click', function () {
+    const taskbar = document.querySelector('.taskbar');
+    taskbar.style.zIndex = highestZIndex + 1;
+});
 
 document.querySelector('.start-button').addEventListener('click', function () {
     const startMenu = document.getElementById('start-menu');
