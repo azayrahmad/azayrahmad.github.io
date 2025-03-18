@@ -457,7 +457,7 @@ document.querySelector('.start-button').addEventListener('click', function () {
 
 // Show desktop button functionality
 document.querySelector('.show-desktop').addEventListener('click', function () {
-    const windows = document.querySelectorAll('.window');
+    const windows = document.querySelectorAll('.app-window');
     const allMinimized = Array.from(windows).every(win => win.isMinimized);
 
     if (allMinimized) {
@@ -573,7 +573,7 @@ function CreateAndOpenApp(event) {
     // Create new window element
     const newWindow = document.createElement('div');
     newWindow.id = windowId;
-    newWindow.className = 'window';
+    newWindow.className = 'window app-window';
 
     // Position the window with slight randomization for cascade effect
     const topPosition = 30 + (Math.random() * 60);
@@ -598,8 +598,10 @@ function CreateAndOpenApp(event) {
                 <button aria-label="Close"></button>
             </div>
         </div>
-        <div class="window-content" style="height: 90vh;">
+        <div class="window-content">
+        <ul class="tree-view">
             ${windowContent}
+            </ul>
         </div>
     `;
 
