@@ -501,32 +501,6 @@ document.querySelectorAll('.start-menu-item').forEach(icon => {
     });
 });
 
-// Extract the event handler function
-function OpenApp(event) {
-    const icon = event.currentTarget;
-    const targetId = icon.getAttribute('for');
-    const win = document.getElementById(targetId);
-    const windowContent = win.querySelector('.window-content');
-
-    if (win) {
-        windowContent.style.height = '90vh';
-        win.classList.remove('hidden');
-        const titleBar = win.querySelector('.title-bar');
-        if (titleBar) {
-            titleBar.classList.remove('inactive');
-        }
-        highestZIndex++;
-        win.style.zIndex = highestZIndex;
-        updateTitleBarClasses(win);
-
-        // Remove hidden class from the corresponding taskbar button
-        const taskbarButton = document.querySelector(`.taskbar-button[for="${targetId}"]`);
-        if (taskbarButton) {
-            taskbarButton.classList.remove('hidden');
-        }
-    }
-}
-
 function CreateAndOpenApp(event) {
     const element = event.currentTarget;
     const windowId = element.getAttribute('for');

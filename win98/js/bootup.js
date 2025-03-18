@@ -70,9 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("login-form").addEventListener("submit", function (e) {
             e.preventDefault();
-            // Optionally, add validation or authentication code here
 
-            // Redirect to the main page (change "index.html" to your target)
+            username = document.getElementById("username").value;
+            logofftext = document.getElementById("logofftext");
+            logofftext.textContent = `Log Off ${username}...`;
 
             document.getElementById("login-screen").classList.add("hidden");
             bootSound.play();
