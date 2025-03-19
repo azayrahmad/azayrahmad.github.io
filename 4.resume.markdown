@@ -3,16 +3,6 @@ title: Resume
 permalink: /resume/
 ---
 
----
-
-## Contents
-
-- [Summary](#professional-summary)
-- [Experience](#experience)
-- [Education](#education)
-- [Skills](#skills)
-- [Professional Projects](#professional-projects)
-
 ## Professional Summary
 
 {{ site.data.resume.professional_summary }}

@@ -293,9 +293,6 @@ function maximizeWindow(win) {
     win.originalTitleBarRect = titleBar.getBoundingClientRect();
     win.originalWindowRect = win.getBoundingClientRect();
 
-    // Hide content during animation
-    windowContent.style.display = 'none';
-
     const titleBarCopy = createTitleBarCopy(titleBar, win.originalTitleBarRect);
     document.body.appendChild(titleBarCopy);
 
@@ -332,7 +329,6 @@ function maximizeWindow(win) {
 
         win.isMaximized = true;
         updateWindowControls(win);
-        windowContent.style.display = '';
         titleBarCopy.remove();
     });
 }
@@ -343,9 +339,6 @@ function restoreFromMaximized(win) {
     const titleBar = win.querySelector('.title-bar');
     const windowContent = win.querySelector('.window-content');
     const desktopArea = document.getElementById('desktop-area');
-
-    windowContent.style.display = 'none';
-
     const desktopRect = desktopArea.getBoundingClientRect();
     const titleBarCopy = createTitleBarCopy(titleBar, {
         left: desktopRect.left,
@@ -371,7 +364,6 @@ function restoreFromMaximized(win) {
 
         win.isMaximized = false;
         updateWindowControls(win);
-        windowContent.style.display = '';
         titleBarCopy.remove();
     });
 }

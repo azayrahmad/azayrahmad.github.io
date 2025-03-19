@@ -3,6 +3,6 @@ title: About
 permalink: /about/
 ---
 
-![Picture of Aziz with his wife and their lovely daughter](aboutpic.JPG)
+![Picture of Aziz with his wife and their lovely daughter](/about/aboutpic.JPG)
 
 Seasoned software engineer with experience specializing in developing enterprise solutions using C# and .NET technologies since 2015. A part-time lecturer passionate about teaching and mentoring the next generation of developers. Excels in working within Scrum teams, collaborating on complex projects, and continuously upskilling to stay at the forefront of technological advancements.

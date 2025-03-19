@@ -21,7 +21,7 @@
                 {%- if my_page.title -%}
 
                 <li class="start-menu-item" for="{{ my_page.url | relative_url }}">
-                    <img src="/win98/icons/directory_open_file_mydocs-1.png" alt="My Documents">
+                    <img src="/win98/icons/SHELL32_3.ico" alt="My Documents">
                     <span>{{ my_page.title | escape }}</span>
                 </li>
                 {%- endif -%}
@@ -51,15 +51,9 @@
     <div class="taskbar-divider"></div>
     <div class="taskbar-divider-handler"></div>
     <div class="taskbar-app-area">
-
-        {%- for path in page_paths -%}
-        {%- assign my_page = site.pages | where: "path", path | first -%}
-        {%- if my_page.title -%}
-        <!-- <button for="{{ my_page.url | relative_url }}" class="taskbar-button hidden">
-            <img src="/win98/icons/SHELL32_3.ico" alt="My Computer">{{ my_page.title | escape }}
-        </button> -->
-        {%- endif -%}
-        {%- endfor -%}
+        <button for="home" class="taskbar-button">
+            <img src="/win98/icons/SHELL32_3.ico" alt="My Computer">Home
+        </button>
 
     </div>
     <div class="taskbar-divider"></div>
