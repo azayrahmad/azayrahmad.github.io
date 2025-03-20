@@ -567,6 +567,25 @@ function CreateAndOpenApp(event) {
     }
 
     // Create new window element
+    const content = document.createElement('div');
+    content.innerHTML = `${windowContent}`;
+
+    const newWindow = createAppWindow({
+        windowId: windowId,
+        windowTitle: `${windowTitle}`,
+        windowIcon: `${windowIcon}`,
+        contentElement: content
+    });
+
+    const taskbarButton = createTaskbarButton(windowId, windowIcon, windowTitle);
+
+    // Setup event listeners for window controls
+    setupWindowControls(newWindow, taskbarButton);
+    // Update title bar classes to show this as active window
+    updateTitleBarClasses(newWindow);
+}
+
+function createAppWindow({ windowId, windowTitle, windowIcon, contentElement }) {
     const newWindow = document.createElement('div');
     newWindow.id = windowId;
     newWindow.className = 'window app-window';
@@ -594,22 +613,21 @@ function CreateAndOpenApp(event) {
                 <button aria-label="Close"></button>
             </div>
         </div>
-        <div class="window-content">
-            ${windowContent}
-        </div>
+        <div class="window-content"></div>
     `;
+
+    // Append provided contentElement
+    const contentContainer = newWindow.querySelector('.window-content');
+    if (contentElement) {
+        contentContainer.appendChild(contentElement);
+    }
 
     // Add to document
     document.body.appendChild(newWindow);
 
-
-    const taskbarButton = createTaskbarButton(windowId, windowIcon, windowTitle);
-
-    // Setup event listeners for window controls
-    setupWindowControls(newWindow, taskbarButton);
-    // Update title bar classes to show this as active window
-    updateTitleBarClasses(newWindow);
+    return newWindow;
 }
+
 
 // Helper function to setup window controls (minimize, maximize, close)
 function setupWindowControls(windowElement, taskbarButton) {
