@@ -92,6 +92,7 @@ document.querySelectorAll('.window').forEach(makeWindowDraggable);
 
 function makeWindowDraggable(win) {
     const titleBar = win.querySelector('.title-bar');
+    const desktopArea = document.querySelector('.desktop-area');
     let offsetX, offsetY, isDragging = false;
     let dragOutline = null;
     let startCoords = null, initialRect = null;
@@ -101,16 +102,43 @@ function makeWindowDraggable(win) {
         // Do not start dragging if clicking controls
         if (e.target.closest('.title-bar-controls')) return;
         if (win.isMaximized) return;
+
+        const desktopRect = desktopArea.getBoundingClientRect();
+        const pointerCoords = getPointerCoords(e);
+
+        // Prevent mouse from going outside desktop-area
+        if (
+            pointerCoords.x < desktopRect.left ||
+            pointerCoords.x > desktopRect.right ||
+            pointerCoords.y < desktopRect.top ||
+            pointerCoords.y > desktopRect.bottom
+        ) {
+            return;
+        }
+
         isDragging = true;
         initialRect = win.getBoundingClientRect();
-        startCoords = getPointerCoords(e);
+        startCoords = pointerCoords;
         offsetX = startCoords.x - initialRect.left;
         offsetY = startCoords.y - initialRect.top;
     }
 
     function drag(e) {
         if (!isDragging) return;
+
+        const desktopRect = desktopArea.getBoundingClientRect();
         const currentCoords = getPointerCoords(e);
+
+        // Prevent mouse from going outside desktop-area
+        if (
+            currentCoords.x < desktopRect.left ||
+            currentCoords.x > desktopRect.right ||
+            currentCoords.y < desktopRect.top ||
+            currentCoords.y > desktopRect.bottom
+        ) {
+            return;
+        }
+
         const dx = currentCoords.x - startCoords.x;
         const dy = currentCoords.y - startCoords.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -375,9 +403,11 @@ function updateWindowControls(win) {
     if (win.isMaximized) {
         maximizeBtn.style.display = 'none';
         restoreBtn.style.display = 'inline-block';
+        win.style.resize = 'none';
     } else {
         maximizeBtn.style.display = 'inline-block';
         restoreBtn.style.display = 'none';
+        win.style.resize = 'both';
     }
 }
 
@@ -565,9 +595,7 @@ function CreateAndOpenApp(event) {
             </div>
         </div>
         <div class="window-content">
-        <ul class="tree-view">
             ${windowContent}
-            </ul>
         </div>
     `;
 

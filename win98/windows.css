@@ -226,6 +226,7 @@ body, html {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    resize: both;
 }
 
 .desktop {
@@ -486,6 +487,8 @@ button:not(:disabled):active img {
     background-color: var(--highlight-blue);
     margin: 2px;
     margin-right: 0;
+  display: grid;
+  align-items: end;
 }
 
 .start-menu-wrapper {
@@ -547,4 +550,9 @@ button:not(:disabled):active img {
     opacity: 0;
     transition: opacity 0.2s;
     pointer-events: none;
+}
+
+.toolbar-menu {
+    background: silver;
+    min-height: 23px
 }

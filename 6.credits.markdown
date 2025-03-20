@@ -1,0 +1,25 @@
+---
+title: Credits
+id: credits
+---
+
+<style>
+    .notepad-area {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        border-radius: 0;
+        box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+        box-sizing: border-box;
+        padding: 3px 4px;
+        font-size: 20px
+    }
+</style>
+<div style="display: flex;flex-direction: column;">
+
+<div class="toolbar-menu" style="  display: grid; align-items: left;"> </div>
+
+<span class="notepad-area">Hello</span>
+
+</div>
