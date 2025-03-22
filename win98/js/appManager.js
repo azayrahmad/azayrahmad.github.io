@@ -7,7 +7,7 @@ function CreateAndOpenApp(event) {
     // If this element has all the data, use it directly
     if (element.hasAttribute('title') && element.hasAttribute('data-icon')) {
         windowTitle = element.getAttribute('title') || 'New Window';
-        windowIcon = element.getAttribute('data-icon') || '/win98/icons/shell32_3.ico';
+        windowIcon = element.getAttribute('data-icon') || '/win98/icons/SHELL32_3.ico';
         windowContent = element.getAttribute('data-content') || '';
     }
     // Otherwise, find the corresponding desktop icon and get data from there
@@ -15,12 +15,12 @@ function CreateAndOpenApp(event) {
         const desktopIcon = document.querySelector(`.desktop-icon[for="${windowId}"]`);
         if (desktopIcon) {
             windowTitle = desktopIcon.getAttribute('title') || 'New Window';
-            windowIcon = desktopIcon.getAttribute('data-icon') || '/win98/icons/shell32_3.ico';
+            windowIcon = desktopIcon.getAttribute('data-icon') || '/win98/icons/SHELL32_3.ico';
             windowContent = desktopIcon.getAttribute('data-content') || '';
         } else {
             // Fallback values if no matching desktop icon is found
             windowTitle = 'New Window';
-            windowIcon = '/win98/icons/shell32_3.ico';
+            windowIcon = '/win98/icons/SHELL32_3.ico';
             windowContent = '';
         }
     }
