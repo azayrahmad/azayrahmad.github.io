@@ -75,11 +75,59 @@ document.addEventListener("DOMContentLoaded", function () {
             logofftext = document.getElementById("logofftext");
             logofftext.textContent = `Log Off ${username}...`;
 
+            // Add event listener to logoff text
+            logofftext.addEventListener("click", function () {
+                closeAllWindows();
+                appContainer.classList.add("hidden");
+                document.getElementById("login-screen").classList.remove("hidden");
+                document.getElementById("username").value = ""; // Clear the username field
+            });
+
             document.getElementById("login-screen").classList.add("hidden");
             bootSound.play();
+
+            // Create welcome window using createAppWindow from windows.js
+            const welcomeContent = document.createElement('div');
+            welcomeContent.innerHTML = `<div class="welcome-content" style="padding: 10px;">
+                <h3>Welcome ${username}!</h3>
+                <p>Your Windows 98 desktop is ready.</p>
+            </div>`;
+
+            var welcomeWindow = createAppWindow({
+                windowId: 'welcome-window',
+                windowTitle: 'Welcome to Windows 98',
+                windowIcon: 'win98/icons/shell32_3.ico',
+                contentElement: welcomeContent, centered: true
+            });
+            welcomeWindow.style.resize = 'none';
+
+            // Create taskbar button for welcome window
+            const taskbarButton = createTaskbarButton('welcome-window', 'win98/icons/shell32_3.ico', 'Welcome');
+
+            // Setup event listeners for window controls
+            setupWindowControls(welcomeWindow, taskbarButton);
+            // Update title bar classes to show this as active window
+            updateTitleBarClasses(welcomeWindow);
+
             appContainer.classList.remove("hidden");
         });
     }
 
     loadAssets();
+
+    // Function to close all windows
+    function closeAllWindows() {
+        const windows = document.querySelectorAll('.app-window');
+        windows.forEach(window => {
+            // Get the window ID
+            const windowId = window.id;
+            // Find and remove the corresponding taskbar button
+            const taskbarButton = document.querySelector(`.taskbar-button[for="${windowId}"]`);
+            if (taskbarButton) {
+                taskbarButton.remove();
+            }
+            // Remove the window
+            window.remove();
+        });
+    }
 });

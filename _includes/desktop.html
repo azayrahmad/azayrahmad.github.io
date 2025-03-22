@@ -8,10 +8,10 @@
     {%- if my_page.title -%}
 
     <div class="desktop-icon" ondblclick="CreateAndOpenApp(event)" for="{{ my_page.url | relative_url }}" title="{{ my_page.title | escape
-                }}" data-icon="/win98/icons/SHELL32_3.ico" data-content="{{ my_page.content | escape
+                }}" data-icon="{{ my_page.icon }}" data-content="{{ my_page.content | escape
                 }}">
         <div class="icon">
-            <img src="/win98/icons/SHELL32_3.ico">
+            <img src="{{ my_page.icon-large | default: my_page.icon | default: '/win98/icons/SHELL32_3.ico' }}">
         </div>
         <div class="icon-label">{{ my_page.title | escape
             }}</div>
@@ -19,5 +19,5 @@
 
     {%- endif -%}
     {%- endfor -%}
-    {{ content }}
+    
 </div>

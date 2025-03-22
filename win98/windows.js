@@ -59,6 +59,22 @@ function deactivateAllWindows(event) {
     }
 }
 
+// Function to close all windows
+function closeAllWindows() {
+    const windows = document.querySelectorAll('.app-window');
+    windows.forEach(window => {
+        // Get the window ID
+        const windowId = window.id;
+        // Find and remove the corresponding taskbar button
+        const taskbarButton = document.querySelector(`.taskbar-button[for="${windowId}"]`);
+        if (taskbarButton) {
+            taskbarButton.remove();
+        }
+        // Remove the window
+        window.remove();
+    });
+}
+
 // Bring window to front on pointer down.
 document.querySelectorAll('.window').forEach(win => {
     win.addEventListener('mousedown', bringToFront);
@@ -585,7 +601,7 @@ function CreateAndOpenApp(event) {
     updateTitleBarClasses(newWindow);
 }
 
-function createAppWindow({ windowId, windowTitle, windowIcon, contentElement }) {
+function createAppWindow({ windowId, windowTitle, windowIcon, contentElement, centered = false }) {
     const newWindow = document.createElement('div');
     newWindow.id = windowId;
     newWindow.className = 'window app-window';
