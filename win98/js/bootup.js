@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var welcomeWindow = createAppWindow({
                 windowId: 'welcome-window',
                 windowTitle: 'Welcome to Windows 98',
-                windowIcon: 'win98/icons/shell32_3.ico',
+                windowIcon: 'win98/icons/SHELL32_3.ico',
                 contentElement: welcomeContent, centered: true
             });
             welcomeWindow.style.resize = 'none';
