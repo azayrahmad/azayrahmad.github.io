@@ -87,11 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
             bootSound.play();
 
             // Create welcome window using createAppWindow from windows.js
+            var welcomeContentOriginal = document.getElementById("welcome-content-home");
             const welcomeContent = document.createElement('div');
-            welcomeContent.innerHTML = `<div class="welcome-content" style="padding: 10px;">
-                <h3>Welcome ${username}!</h3>
-                <p>Your Windows 98 desktop is ready.</p>
-            </div>`;
+            welcomeContent.innerHTML = welcomeContentOriginal.innerHTML;
 
             var welcomeWindow = createAppWindow({
                 windowId: 'welcome-window',
