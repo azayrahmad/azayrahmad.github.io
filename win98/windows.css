@@ -98,23 +98,49 @@ body, html {
 }
 
 .gif-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
+    margin: 0;
+    padding: 0;
     height: 100vh;
-    background: black;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    display: flex;
     align-items: center;
-    z-index: 9999;
-    pointer-events: none;
+    justify-content: center;
     overflow: hidden;
 }
-.gif-screen img {
-    /* For horizontal screens (computers) */
+
+.content img {
+    width: 100%;
     height: 100%;
-    object-fit: contain; /* Changed from cover to contain */
+    object-fit: cover;
+}
+
+.loading-banner {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg,
+            #4E7BB8 0%,
+            #ADB9C3 25%,
+            #ADB9C3 50%,
+            #4E7BB8 100%);
+    background-size: 1000px 20px;
+    animation: moving-banner 2s linear infinite;
+    position: fixed;
+    bottom: 0;
+}
+
+@keyframes moving-banner {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
 }
 
 /* Media query for vertical/mobile screens */
@@ -226,6 +252,9 @@ body, html {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+}
+
+.app-window {
     resize: both;
 }
 

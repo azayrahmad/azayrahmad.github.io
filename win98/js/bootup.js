@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             welcomeWindow.style.resize = 'none';
 
             // Create taskbar button for welcome window
-            const taskbarButton = createTaskbarButton('welcome-window', 'win98/icons/shell32_3.ico', 'Welcome');
+            const taskbarButton = createTaskbarButton('welcome-window', 'win98/icons/SHELL32_3.ico', 'Welcome');
 
             // Setup event listeners for window controls
             setupWindowControls(welcomeWindow, taskbarButton);
