@@ -60,7 +60,7 @@ function CreateAndOpenApp(event) {
     updateTitleBarClasses(newWindow);
 }
 
-function createAppWindow({ windowId, windowTitle, windowIcon, contentElement, centered = false }) {
+function createAppWindow({ windowId, windowTitle, windowIcon, contentElement, centered = false, width, height }) {
     const newWindow = document.createElement('div');
     newWindow.id = windowId;
     newWindow.className = 'window app-window';
@@ -70,6 +70,24 @@ function createAppWindow({ windowId, windowTitle, windowIcon, contentElement, ce
     const leftPosition = 50 + (Math.random() * 100);
     newWindow.style.top = `${topPosition}px`;
     newWindow.style.left = `${leftPosition}px`;
+
+    // Apply width and height only if provided
+    if (width !== undefined) {
+        newWindow.style.width = typeof width === 'number' ? `${width}px` : width;
+    }
+    if (height !== undefined) {
+        newWindow.style.height = typeof height === 'number' ? `${height}px` : height;
+    }
+
+    // If centered is true and both width and height are provided, center the window
+    if (centered && width !== undefined && height !== undefined) {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const xPosition = (windowWidth - parseInt(width)) / 2;
+        const yPosition = (windowHeight - parseInt(height)) / 2;
+        newWindow.style.left = `${xPosition}px`;
+        newWindow.style.top = `${yPosition}px`;
+    }
 
     // Set highest z-index
     highestZIndex++;
@@ -102,7 +120,6 @@ function createAppWindow({ windowId, windowTitle, windowIcon, contentElement, ce
 
     return newWindow;
 }
-
 
 // Helper function to setup window controls (minimize, maximize, close)
 function setupWindowControls(windowElement, taskbarButton) {

@@ -95,7 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 windowId: 'welcome-window',
                 windowTitle: 'Welcome to Windows 98',
                 windowIcon: 'win98/icons/SHELL32_3.ico',
-                contentElement: welcomeContent, centered: true
+                contentElement: welcomeContent, centered: true,
+                width: 600, height: 400
             });
             welcomeWindow.style.resize = 'none';
 

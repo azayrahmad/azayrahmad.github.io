@@ -75,6 +75,7 @@ body, html {
     font-family: 'MSW98UI', sans-serif;
     background-color: var(--background-teal);
     image-rendering: pixelated;
+    font-smooth: never;
 }
 
 .boot-screen {
