@@ -6,15 +6,19 @@ options:
   - title: "Professional Experience"
     id: "welcome-experience"
     content: "Senior Web Developer at NTainers Pty Ltd (2024-Present), Lecturer at Primakara University (2022-Present), Analyst Programmer at Mitrais (2017-2024), and Software Consultant at CODE.ID (2015-2017). Experienced in developing enterprise software solutions for various markets including Indonesia, Australia, and New Zealand."
+    image: "assets/img/computer.png" # Background for experience
 
   - title: "Technical Skills"
     id: "welcome-skills"
     content: "Proficient in .NET Framework, .NET Core, C#, VB .NET, and databases like MS SQL Server, PostgreSQL, and Oracle. Experienced with Git, Crystal Report, SSRS, and methodologies like Agile and Scrum. Strong background in CI/CD practices and software testing."
+    image: "assets/img/ebook.png" # Background for skills
 
   - title: "Education"
     id: "welcome-education"
     content: "Master of Computer Science from Bogor Agricultural University (2012-2015), graduated Cum Laude with a GPA of 3.69/4.00. Coursework included Algorithm Analysis & Design and Advanced Software Development."
+    image: "assets/img/books.png" # Background for education
 
   - title: "Notable Projects"
     id: "welcome-projects"
     content: "Led development of various enterprise solutions including Human Resource Management System, Enterprise Suite (HR & Payroll), Tax Automation for a major Indonesian bank, and Employee Connection application with specialized corporate modules."
+    image: "assets/img/phone.png" # Background for projects

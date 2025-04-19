@@ -8,11 +8,13 @@ layout: windows
 <style>
   #welcome-content-source {
     display: none;
+    background-color: white;
   }
 
   .content-wrapper {
     display: flex;
     margin-top: 20px;
+    height: calc(100% - 60px);
   }
 
   .options-panel {
@@ -46,6 +48,10 @@ layout: windows
   #welcome-intro {
     display: block;
   }
+
+  .banner {
+    font-size: 2em; /* Enlarged header font */
+  }
 </style>
 
 <div id="welcome-content-source">
@@ -70,6 +76,7 @@ layout: windows
         </div>
         {% for option in site.data.welcome.options %}
         <div id="{{ option.id }}" class="welcome-detail">
+          <h2>{{ option.title }}</h2> <!-- Added option title to detail panel -->
           <p>{{ option.content }}</p>
         </div>
         {% endfor %}

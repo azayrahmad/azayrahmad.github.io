@@ -71,6 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
     welcomeContent.className = "welcome-content";
     welcomeContent.innerHTML = welcomeContentSource.innerHTML;
 
+    // Add 100% width and height
+    welcomeContent.style.width = "100%";
+    welcomeContent.style.height = "100%";
+
     return welcomeContent;
   }
 
