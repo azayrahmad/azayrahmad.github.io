@@ -5,36 +5,75 @@
 layout: windows
 ---
 
-<div class="container">
-  <div class="profile-section fade-in">
-    <!-- <img src="/assets/img/azayrahmad-qrcode.png" alt="Aziz Rahmad" class="profile-image blur-in"> -->
-    <div class="text-content">
-      <h1 class="homepage-title"><a href="/about">aziz</a> rahmad.</h1>
-      <p class="homepage-subtitle"><a href="/projects">Software engineer</a> specializing in .NET since 2015. <a href="/lecturing">university lecturer</a> passionate about computer science education.</p>
-    </div>
-  </div>
+<style>
+  #welcome-content-source {
+    display: none;
+  }
 
-  <div class="skills-section fade-in">
-    <div class="skill-card">
-      <img src="/assets/img/computer.png" alt=".NET" class="skill-icon">
-      <div class="skill-content">
-        <h3 class="skill-title">.NET Development</h3>
-        <p class="skill-description">Experienced in building scalable enterprise applications using .NET Core and ASP.NET, with a focus on clean architecture and best practices.</p>
+  .content-wrapper {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .options-panel {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .options-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .option {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .detail-panel {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+  }
+
+  .welcome-detail {
+    display: none;
+  }
+
+  #welcome-intro {
+    display: block;
+  }
+</style>
+
+<div id="welcome-content-source">
+
+    <div class="banner">
+    aziz rahmad.
+    </div>
+
+    <div class="content-wrapper">
+      <div class="options-panel">
+        <ul class="options-list">
+          {% for option in site.data.welcome.options %}
+          <li class="option" onmouseover="welcomeShowDetail('{{ option.id }}')">{{ option.title }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="detail-panel">
+        <div id="welcome-intro" class="welcome-detail">
+          <h2>{{ site.data.welcome.intro.title }}</h2>
+          <p>{{ site.data.welcome.intro.content }}</p>
+        </div>
+        {% for option in site.data.welcome.options %}
+        <div id="{{ option.id }}" class="welcome-detail">
+          <p>{{ option.content }}</p>
+        </div>
+        {% endfor %}
       </div>
     </div>
-    <div class="skill-card">
-      <img src="/assets/img/books.png" alt="Teaching" class="skill-icon">
-      <div class="skill-content">
-        <h3 class="skill-title">Computer Science Education</h3>
-        <p class="skill-description">Passionate educator teaching programming fundamentals, algorithms, and software engineering principles to university students.</p>
-      </div>
-    </div>
-    <div class="skill-card">
-      <img src="/assets/img/ebook.png" alt="Code" class="skill-icon">
-      <div class="skill-content">
-        <h3 class="skill-title">Software Architecture</h3>
-        <p class="skill-description">Designing robust and maintainable software systems with expertise in microservices, domain-driven design, and cloud architecture.</p>
-      </div>
-    </div>
-  </div>
+
 </div>
