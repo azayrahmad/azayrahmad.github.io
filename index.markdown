@@ -96,7 +96,8 @@ layout: windows
 <div id="welcome-content-source">
   <div class="welcome-wrapper">
     <div class="banner">
-    aziz rahmad.
+
+  <button onclick="startClippy()">Show Clippy</button>
     </div>
 
     <div class="content-wrapper">

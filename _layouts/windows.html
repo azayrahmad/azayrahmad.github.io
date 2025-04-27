@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
-{%- include head.html -%}
+    {%- include head.html -%}
 
-<body class="scanlines">
-    {%- include bootup.html -%}
+    <body class="scanlines">
+        {%- include bootup.html -%}
 
-    <div id="app-container" class="app-container hidden">
-        <div id="desktop-area" class="desktop-area">
-            {%- include desktop.html -%}
+        <div id="app-container" class="app-container hidden">
+            <div id="desktop-area" class="desktop-area">
+                {%- include desktop.html -%}
+            </div>
+            {%- include taskbar.html -%}
         </div>
-        {%- include taskbar.html -%}
-    </div>
-    <script src="/win98/js/bootup.js"></script>
-    <script src="/win98/js/startmenu.js"></script>
-    <script src="/win98/js/window.js"></script>
-    <script src="/win98/js/appManager.js"></script>
-    <script src="/win98/windows.js"></script>
-</body>
+        <script src="/win98/js/bootup.js"></script>
+        <script src="/win98/js/startmenu.js"></script>
+        <script src="/win98/js/window.js"></script>
+        <script src="/win98/js/appManager.js"></script>
+        <script src="/win98/windows.js"></script>
+        <script>
+            let clippyAgent;
+
+            function startClippy() {
+                $(".clippy").remove(); // remove any existing instance
+                clippy.load("Clippy", function (agent) {
+                    agent.show();
+                    agent.speak(
+                        "Hi there! I'm Clippy. How can I help you today?",
+                    );
+                    clippyAgent = agent;
+                });
+            }
+        </script>
+    </body>
 
 </html>

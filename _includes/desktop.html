@@ -20,8 +20,13 @@
     {%- endif -%}
     {%- endfor -%}
 
+    <div class="desktop-icon" ondblclick="startClippy()" title="Clippy">
+        <div class="icon">
+            <img src="/win98/icons/SHELL32_3.ico" />
+        </div>
+        <div class="icon-label">Clippy</div>
+    </div>
     <div id="welcome-content-home" style="display: none;">
         {{ content }}
     </div>
-
 </div>
