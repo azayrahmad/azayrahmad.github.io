@@ -16,14 +16,14 @@
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# in the templates via {{ site.myvariable.
 
 title: aziz rahmad
 author:
   name: Aziz Rahmad
   email: azayrahmad@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Presented in azOS™.
+  Software Engineer and Part-time Lecturer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://azayrahmad.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 timezone: Asia/Makassar
@@ -32,18 +32,24 @@ show_excerpts: true
 minima:
   skin: auto
   date_format: "%d %b %Y"
-  social_links:
-    - {
-        platform: linkedin,
-        user_url: "https://www.linkedin.com/in/aziz-rahmad/",
-      }
-    - { platform: github, user_url: "https://github.com/azayrahmad/" }
-    - { platform: twitter, user_url: "https://twitter.com/azayrahmad" }
-    - { platform: instagram, user_url: "https://www.instagram.com/azayrahmad" }
+
+header_pages:
+  - 0.about.markdown
+  - 1.projects.markdown
+  - 2.lecturing.markdown
+  - 3.skills.markdown
+  - 4.resume.markdown
+  - 5.posts.markdown
+  - 6.credits.markdown
+
+twitter_username: azayrahmad
+github_username:  azayrahmad
+linkedin_username: aziz-rahmad
+instagram_username: azayrahmad
 
 # Build settings
-# theme: minima
-remote_theme: "jekyll/minima@4c85977"
+theme: minima
+# remote_theme: "jekyll/minima@4c85977"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
