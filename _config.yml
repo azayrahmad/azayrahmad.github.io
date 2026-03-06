@@ -18,12 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable.
 
-title: aziz rahmad
-author:
-  name: Aziz Rahmad
-  email: azayrahmad@gmail.com
+title: Aziz Rahmad's Blog
+author: Aziz Rahmad
+email: azayrahmad@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Software Engineer and Part-time Lecturer.
+  Blog by Aziz Rahmad. Software Engineer and Part-time Lecturer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://azayrahmad.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 timezone: Asia/Makassar
@@ -33,14 +32,7 @@ minima:
   skin: auto
   date_format: "%d %b %Y"
 
-header_pages:
-  - 0.about.markdown
-  - 1.projects.markdown
-  - 2.lecturing.markdown
-  - 3.skills.markdown
-  - 4.resume.markdown
-  - 5.posts.markdown
-  - 6.credits.markdown
+# header_pages:
 
 twitter_username: azayrahmad
 github_username:  azayrahmad
