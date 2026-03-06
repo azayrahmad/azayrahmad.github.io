@@ -1,9 +1,0 @@
----
-layout: page
-title: Lecturing
-permalink: /lecturing/
----
-
-## Under Construction
-
-Come back later.
