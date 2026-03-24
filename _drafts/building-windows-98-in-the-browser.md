@@ -1,39 +1,44 @@
 ---
 layout: post
-title: "Building Windows 98 in the Browser: A Year-Long Rabbit Hole"
+title: "Recreating Windows 98 Desktop Themes on the web"
 ---
 
-Last March I set out to give my personal blog a Windows 98 makeover. A year later, in March 2026, I had built something I hadn't planned: a standalone browser recreation of the Windows 98 desktop, complete with working applications, the original desktop themes, animated screensavers rebuilt from extracted assets, a real in-browser file system, and a DOS emulator. This is how that happened.
 
 ---
 
-## Where It Started
+## It was 2002...
 
-I grew up in Riau, Indonesia in the early 2000s using a secondhand Pentium MMX running Windows 98. What I remember most isn't any particular game or application — it's the Desktop Themes. Windows 98 shipped with a theming system that rewrote the entire environment at once: wallpaper, window colors, cursor sets, sound events, all bundled together. I spent hours switching between them and downloading new ones from the internet. Science themes, nature themes, movie tie-ins. Each one made the machine feel like a different place.
+I had just gotten back home for my school break when I noticed a computer in my room. A beige, yellowing Pentium MMX running Windows 98 that my father had bought secondhand for me. I had experience using computers before, but this was my family’s first personal computer, even if it's already outdated at the time. The moment I turned on the machine and saw the bulky CRT glowed, I became completely obsessed.
 
-That detail matters later.
+There are many aspects of a computer that I'm fascinated about, but for the purpose of this article I'd like to focus on one: desktop themes. It's probably weird, but the audiovisual experience of using a computer is what makes it more than just a tool, and the ability to personalize it is one that truly makes it mine. I spent countless hours customizing the look and the sound of my computer, randomly playing a screensaver and staring at it endlessly, and collecting desktop theme files from any other computer I can get my hands on to my array of diskettes.
+
+[screenshot of windows 98 vm with active desktop theme]
 
 ---
 
 ## Phase 1: Dressing Up the Blog (March 2025)
 
-The original idea was simple: style my Jekyll blog at [azayrahmad.github.io](https://azayrahmad.github.io) to look like Windows 98. I'm a software engineer with a C# background, so JavaScript is not my native territory — I leaned on Claude and ChatGPT to help with the CSS and JS work from the start.
+Fast forward 23 years later. I had been a software engineer for a decade at that point. They say these days every software engineer should own a website, so I finally caved in and made my first personal website. [azayrahmad.github.io](https://azayrahmad.github.io), a Jekyll blog with my CV and some articles I made. I randomly remembered my experience with Windows 98 desktop themes and thought about expressing a little bit about myself more through the website design. I was thinking of making my website look like Windows 98.
 
-The first significant find was **[98.css](https://jdan.github.io/98.css/)**, a CSS library that recreates the Windows 98 visual language. What's notable about it isn't just the aesthetic accuracy — it's the semantic approach. You write standard HTML with the right class names and get correct Windows 98 window chrome, button states, and borders. Someone had thought carefully about how Windows 98 actually organized its components, not just what it looked like.
+Web development, especially JavaScript, was not my strength. So to achieve this I leaned on LLM tools to help with CSS and JS work. However, merely instructing Claude or ChatGPT to create a Windows 98 themed webpage was and still is not enough, at least visually. It could create a working Windows Explorer and Notepad and even Minesweeper inside a webpage, but somehow visually it's just slop.
 
-For interactive behavior — draggable windows, working minimize/maximize/close buttons, a taskbar — I found **[os-gui.js](https://os-gui.js.org/)** after attempting to build the same thing myself. It was doing what I'd attempted, and doing it better. I switched without hesitation.
+[screenshot of various sloppy AI generated idea of what Windows 98 looks like]
 
-The Jekyll approach eventually hit a wall. Overriding a theme on top of a theme creates compounding complexity, and that complexity is particularly costly when AI tools are part of your workflow — they work better with clean, explicit structure. By mid-2025 I decided to start from scratch.
+Enter **[98.css](https://jdan.github.io/98.css/)**, a CSS library that recreates the Windows 98 visual language I found online. This is one of the first times I found a serious attempt at recreating Windows 98 look accurately down to pixel sizes. By mentioning this docs page to AI, it successfully overrode my default Jekyll Minima theme with Windows 98 theme easily.
+
+I tried making it interactive with working windows and taskbar using AI-generated JavaScript, but complexity grew and I decided to stop overriding Jekyll theme and start building a proper website from scratch by mid-2025.
 
 ---
 
 ## Phase 2: A Proper Separate Project (August 2025)
 
-I opened a new repository — [win98-web](https://github.com/azayrahmad/win98-web) — as a standalone project built with vanilla JavaScript, HTML, CSS, and Vite. No framework, no inherited opinions.
+I opened a new repository — [win98-web](https://github.com/azayrahmad/win98-web) — as a standalone project built started with a single HTML page, a modified 98.css file, and a bunch of JavaScript files refactored from the previous project. I must not be the first one to have this idea so I explored similar attempts on creating Windows 98-like website before continuing.
 
-Before building anything substantial, I surveyed the landscape. Browser-based Windows 98 recreations already exist: [windows93.net](https://www.windows93.net/), [Windows 96](https://windows96.net/), [98.js.org](https://98.js.org/), and [1j01/98](https://github.com/1j01/98) are the most notable. Each takes a different approach — Windows 96 is a serious technical recreation, 98.js is a faithful GUI clone, windows93 is more of an art project, and 1j01/98 is a polished open-source desktop recreation. All worth knowing about.
+There are some great Windows 9x-like websites: [windows93.net](https://www.windows93.net/), [Windows 96](https://windows96.net/), [98.js.org](https://98.js.org/) are the most notable. Each takes a different approach: Windows 96 is a more like a Web OS with Win9x skins, windows93 is more of an art/parody project, and 98.js.org is the closest to the real Windows 98. I decided to explore the 98.js.org repository more especially on its theming implementation.
 
-None of them had a complete Desktop Themes implementation. The closest is 1j01/98, which supports color schemes and wallpapers — the same foundation os-gui.js provides, and the same foundation my project builds on. What nobody had done was the full bundle: wallpapers, animated `.ani` cursor sets, and sound event mappings all applying together from a single `.theme` file, the way Windows 98 actually shipped them. That was the gap, and it was the gap I cared about personally. So that's where I started.
+It uses **[os-gui.js](https://os-gui.js.org/)**, a great JavaScript library that implements many of the windows functionalities and also support color schemes adapted from [tpenguinltg's WinClassic project](https://tpenguinltg.github.io/winclassic/). I thought that I shouldn't reinvent the wheel and just integrate it to my website. 98.css and os-gui have their own idea on implementing the visual so I had to manually integrate them to work together.
+
+Unfortunately, none of them had a complete Desktop Themes implementation. 98.js.org already supports extracting color scheme from `.theme` file, but that's it. What nobody had done was the full bundle: wallpapers, animated `.ani` cursor sets, and sound event mappings all applying together from a single `.theme` file, the way Windows 98 actually shipped them. That was the gap that I cared about personally. So that's where I started.
 
 ---
 
