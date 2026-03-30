@@ -32,7 +32,9 @@ minima:
   skin: auto
   date_format: "%d %b %Y"
 
-# header_pages:
+header_pages:
+  - index.markdown
+  - resume.markdown
 
 twitter_username: azayrahmad
 github_username:  azayrahmad
