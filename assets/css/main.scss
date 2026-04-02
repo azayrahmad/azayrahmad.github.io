@@ -1,0 +1,67 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Font Face Definitions
+@font-face {
+  font-family: 'TeX Gyre Heros';
+  src: url('../fonts/texgyreheros-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TeX Gyre Heros';
+  src: url('../fonts/texgyreheros-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TeX Gyre Termes';
+  src: url('../fonts/texgyretermes-italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TeX Gyre Termes';
+  src: url('../fonts/texgyretermes-bolditalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Global font styles
+body {
+  font-family: 'TeX Gyre Heros', Helvetica, sans-serif !important;
+}
+
+// Italic styles use TeX Gyre Termes
+em, i, cite, dfn, var, address {
+  font-family: 'TeX Gyre Termes', 'EB Garamond', serif !important;
+  font-style: italic !important;
+}
+
+// Nested bold in italic uses Termes Bold Italic
+em strong, em b, i strong, i b, strong em, strong i, b em, b i {
+  font-family: 'TeX Gyre Termes', 'EB Garamond', serif !important;
+  font-weight: bold !important;
+  font-style: italic !important;
+}
+
+// Regular bold uses Heros Bold
+strong, b {
+  font-family: 'TeX Gyre Heros', Helvetica, sans-serif !important;
+  font-weight: bold !important;
+}
+
+// Resume-specific overrides to ensure consistency
+.resume {
+  font-family: 'TeX Gyre Heros', Helvetica, sans-serif;
+
+  .job-company, .edu-school, .project-entity, .pub-publisher, .vol-position, .job-company-desc em {
+    font-family: 'TeX Gyre Termes', 'EB Garamond', serif !important;
+    font-style: italic !important;
+  }
+}
