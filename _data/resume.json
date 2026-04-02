@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://azayrahmad.github.io/resume.json"
+  },
   "basics": {
     "name": "Aziz Rahmad",
     "label": "Senior Software Developer",
@@ -35,6 +39,7 @@
   "work": [
     {
       "name": "NTainers.co Pty Ltd",
+      "description": "A logistics technology firm specializing in AI-driven automation and chat-based assistants for global supply chain operations.",
       "position": "Senior Web Developer",
       "url": "https://ntainers.co",
       "startDate": "2024-08-01",
@@ -49,6 +54,7 @@
     },
     {
       "name": "Primakara University",
+      "description": "A premier IT-focused university in Bali dedicated to fostering innovation and preparing global-ready technology professionals.",
       "position": "Part-Time Lecturer",
       "url": "https://primakara.ac.id",
       "startDate": "2022-02-01",
@@ -63,6 +69,7 @@
     },
     {
       "name": "Mitrais (TechnologyOne Corp)",
+      "description": "A leading software development service provider in Southeast Asia, specializing in enterprise SaaS and industrial software solutions.",
       "position": "Analyst Programmer",
       "url": "https://www.mitrais.com",
       "startDate": "2017-10-01",
@@ -78,6 +85,7 @@
     },
     {
       "name": "CODE.ID (Bank Danamon Indonesia)",
+      "description": "A premier software house and IT consultancy in Jakarta providing bespoke digital transformation and enterprise-grade solutions.",
       "position": "Software Consultant",
       "url": "https://code.id",
       "startDate": "2015-11-01",
@@ -91,10 +99,24 @@
       ]
     }
   ],
+  "volunteer": [
+    {
+      "organization": "Wildfire Games (0 A.D. Open Source Project)",
+      "position": "Open Source Contributor",
+      "url": "https://code.wildfiregames.com/D3865",
+      "startDate": "2021-06-01",
+      "summary": "Implemented the 'Auto Queue' feature for the open-source RTS game 0 A.D., streamlining unit production workflows for players.",
+      "highlights": [
+        "Developed automated unit training logic for town centers and barracks.",
+        "Collaborated with core developers to ensure feature alignment with game balance."
+      ]
+    }
+  ],
   "projects": [
     {
       "name": "Cargo Chat for Outlook",
       "description": "An Outlook add-in that integrates NTainers.co's Cargo Chat AI to summarize shipment emails, answer logistics queries, and generate smart replies directly in the inbox.",
+      "type": "Application Add-in",
       "highlights": [
         "Developed the add-in with Node.JS TypeScript from scratch.",
         "Developed AI chat interface for NTainers.co Cargo Chat API.",
@@ -111,6 +133,7 @@
     {
       "name": "Mappr.ai",
       "description": "AI-powered integration platform that automates data mapping, transformation, and workflow orchestration, enabling seamless, no-code system interoperability in real time.",
+      "type": "Integration Platform",
       "highlights": [
         "Bug fixes and improvements on Workflow Studio that generates API routes for data transformation using LLM."
       ],
@@ -124,6 +147,7 @@
     {
       "name": "NTainers.co Logistics Portal",
       "description": "AI-powered logistics & supply chain management web portal that integrates with CargoWise TMS.",
+      "type": "Enterprise SaaS",
       "highlights": [
         "Integrated Large Language Models and Document Intelligence into automated data extraction.",
         "Developed the new Cartage Network Integration feature to facilitate automated integration processes between clients and freight forwarders or cartage companies.",
@@ -139,6 +163,7 @@
     {
       "name": "CiAnywhere – Human Resources and Payroll",
       "description": "Human Resource and Payroll submodule of CiAnywhere SaaS, tailored for diverse clients such as Australia, New Zealand, & Great Britain.",
+      "type": "Enterprise SaaS",
       "highlights": [
         "Implemented and maintained various business logic related to Human Resources and Payroll, particularly for Australia and New Zealand payroll and taxation.",
         "Implemented STP (Single Touch Payroll) & STP Phase 2 for Australian clients.",
@@ -225,6 +250,15 @@
       "url": ""
     }
   ],
+  "publications": [
+    {
+      "name": "Multiscale fractal dimension modelling on leaf venation topology pattern of Indonesian medicinal plants",
+      "publisher": "IEEE (2014 International Conference on Advanced Computer Science and Information Systems)",
+      "releaseDate": "2014-10-18",
+      "url": "https://ieeexplore.ieee.org/document/7065847",
+      "summary": "Developed a novel multiscale fractal dimension modelling approach for characterizing leaf venation topology to assist in medicinal plant identification."
+    }
+  ],
   "skills": [
     {
       "name": "AI & LLM",
@@ -270,6 +304,12 @@
     {
       "language": "Indonesian",
       "fluency": "Native"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Retro Computing",
+      "keywords": ["Virtual Machines", "Operating System Emulation", "Legacy OS Preservation"]
     }
   ]
 }

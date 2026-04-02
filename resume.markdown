@@ -40,6 +40,7 @@ permalink: /resume/
         <div class="job-company">
           {% if job.url %}<a href="{{ job.url }}">{% endif %}{{ job.name }}{% if job.url %}</a>{% endif %} | {{ job.location }}
         </div>
+        {% if job.description %}<p class="job-company-desc"><em>{{ job.description }}</em></p>{% endif %}
         <p class="job-summary">{{ job.summary }}</p>
         <ul class="job-highlights">
           {% for highlight in job.highlights %}
@@ -65,6 +66,7 @@ permalink: /resume/
         <div class="project-entity">
           {% if project.entity %}<em>{{ project.entity }}</em>{% endif %}
           {% if project.roles %} | {{ project.roles | join: ", " }}{% endif %}
+          {% if project.type %} | <strong>{{ project.type }}</strong>{% endif %}
         </div>
         <p class="project-description">{{ project.description }}</p>
         <ul class="project-highlights">
@@ -117,6 +119,45 @@ permalink: /resume/
   </section>
   {% endif %}
 
+  {% if resume.publications %}
+  <section class="resume-section">
+    <h2>Publications</h2>
+    {% for pub in resume.publications %}
+      <div class="publication">
+        <div class="pub-header">
+          <span class="pub-name"><strong>{% if pub.url %}<a href="{{ pub.url }}">{% endif %}{{ pub.name | upcase }}{% if pub.url %}</a>{% endif %}</strong></span>
+          <span class="pub-date">{{ pub.releaseDate | date: "%Y" }}</span>
+        </div>
+        <div class="pub-publisher"><em>{{ pub.publisher }}</em></div>
+        <p class="pub-summary">{{ pub.summary }}</p>
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if resume.volunteer %}
+  <section class="resume-section">
+    <h2>Volunteer Work</h2>
+    {% for vol in resume.volunteer %}
+      <div class="volunteer">
+        <div class="vol-header">
+          <span class="vol-org"><strong>{% if vol.url %}<a href="{{ vol.url }}">{% endif %}{{ vol.organization | upcase }}{% if vol.url %}</a>{% endif %}</strong></span>
+          <span class="vol-date">{{ vol.startDate | date: "%Y" }} - {% if vol.endDate %}{{ vol.endDate | date: "%Y" }}{% else %}Present{% endif %}</span>
+        </div>
+        <div class="vol-position"><em>{{ vol.position }}</em></div>
+        <p class="vol-summary">{{ vol.summary }}</p>
+        {% if vol.highlights %}
+          <ul class="vol-highlights">
+            {% for highlight in vol.highlights %}
+              <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
   <section class="resume-section">
     <h2>Technical Skills</h2>
     <div class="skills-grid">
@@ -134,6 +175,17 @@ permalink: /resume/
     <ul class="languages">
       {% for lang in resume.languages %}
         <li><strong>{{ lang.language }}:</strong> {{ lang.fluency }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if resume.interests %}
+  <section class="resume-section">
+    <h2>Interests</h2>
+    <ul class="interests">
+      {% for interest in resume.interests %}
+        <li><strong>{{ interest.name }}:</strong> {{ interest.keywords | join: ", " }}</li>
       {% endfor %}
     </ul>
   </section>
@@ -160,9 +212,10 @@ permalink: /resume/
   .resume-section { margin-bottom: 2rem; }
   .resume-section h2 { border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.2rem; }
   .job, .education, .project { margin-bottom: 1.5rem; }
-  .job-header, .edu-header, .project-header { display: flex; justify-content: space-between; font-weight: bold; }
-  .job-company, .edu-school, .project-entity { font-style: italic; color: #555; margin-bottom: 0.5rem; }
-  .job-highlights, .edu-courses, .project-highlights { margin-top: 0.5rem; }
+  .job-header, .edu-header, .project-header, .pub-header, .vol-header { display: flex; justify-content: space-between; font-weight: bold; }
+  .job-company, .edu-school, .project-entity, .pub-publisher, .vol-position { font-style: italic; color: #555; margin-bottom: 0.5rem; }
+  .job-company-desc { font-size: 0.95rem; color: #666; margin-bottom: 0.5rem; }
+  .job-highlights, .edu-courses, .project-highlights, .vol-highlights { margin-top: 0.5rem; }
   .project-keywords { font-size: 0.9rem; color: #444; }
   .skill-category { margin-bottom: 0.5rem; }
   .resume-footer { margin-top: 3rem; text-align: center; border-top: 1px solid #eee; padding-top: 1rem; }
