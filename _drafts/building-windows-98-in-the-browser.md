@@ -15,7 +15,7 @@ That detail matters later.
 
 ---
 
-## Phase 1: Dressing Up the Blog (March 2025)
+## Dressing Up the Blog
 
 The original idea was simple: style my Jekyll blog at [azayrahmad.github.io](https://azayrahmad.github.io) to look like Windows 98. I'm a software engineer with a C# background, so JavaScript is not my native territory — I leaned on Claude and ChatGPT to help with the CSS and JS work from the start.
 
@@ -27,13 +27,13 @@ The Jekyll approach eventually hit a wall. Overriding a theme on top of a theme 
 
 ---
 
-## Phase 2: A Proper Separate Project (August 2025)
+## A Proper Separate Project
 
 I opened a new repository — [win98-web](https://github.com/azayrahmad/win98-web) — as a standalone project built with vanilla JavaScript, HTML, CSS, and Vite. No framework, no inherited opinions.
 
-Before building anything substantial, I surveyed the landscape. Browser-based Windows 98 recreations already exist: [windows93.net](https://www.windows93.net/), [Windows 96](https://windows96.net/), [98.js.org](https://98.js.org/), and [1j01/98](https://github.com/1j01/98) are the most notable. Each takes a different approach — Windows 96 is a serious technical recreation, 98.js is a faithful GUI clone, windows93 is more of an art project, and 1j01/98 is a polished open-source desktop recreation. All worth knowing about.
+There are some great Windows 9x-like websites: [windows93.net](https://www.windows93.net/), [Windows 96](https://windows96.net/), [98.js.org](https://98.js.org/) are the most notable. Each takes a different approach: Windows 96 is a more like a Web OS with Win9x skins, windows93 is more of an art/parody project, and 98.js.org is the closest to the real Windows 98. 
 
-None of them had a complete Desktop Themes implementation. The closest is 1j01/98, which supports color schemes and wallpapers — the same foundation os-gui.js provides, and the same foundation my project builds on. What nobody had done was the full bundle: wallpapers, animated `.ani` cursor sets, and sound event mappings all applying together from a single `.theme` file, the way Windows 98 actually shipped them. That was the gap, and it was the gap I cared about personally. So that's where I started.
+Unfortunately, none of them had a complete Desktop Themes implementation. 98.js.org already supports extracting color scheme from `.theme` file, but that's it. What I need is a full bundle: wallpapers, animated `.ani` cursor sets, and sound event mappings all applying together from a single `.theme` file, the way Windows 98 actually shipped them. That was the gap that I need to close.
 
 ---
 
@@ -41,9 +41,17 @@ None of them had a complete Desktop Themes implementation. The closest is 1j01/9
 
 This required going back to the source material. I set up a Windows 98 virtual machine and used it as both a reference environment and an asset mine throughout the whole project.
 
-The `.theme` files themselves are plaintext INI configuration files that point to asset paths — straightforward to parse once extracted. The associated wallpapers, icon sets, and sound files came out of the VM directly. For color schemes, I integrated with the existing CSS variable system from os-gui.js. For cursors, Windows 98 uses the `.ani` animated cursor format, which the **[ani-cursor](https://github.com/nicowillis/ani-cursor)** library handles cleanly.
+The `.theme` files themselves are plaintext INI configuration files that point to asset paths. It should be straightforward. I decided to explore the 98.js.org repository more especially on its theming implementation. It uses **[os-gui.js](https://os-gui.js.org/)**, a great JavaScript library that implements many of the window functionalities and also support color schemes adapted from [tpenguinltg's WinClassic project](https://tpenguinltg.github.io/winclassic/). I thought that I shouldn't reinvent the wheel and just integrate it to my website. 
 
-Screensavers were a more interesting problem. Five of the classic animated ones — including the legendary 3D Pipes, 3D Maze, Space, and Underwater — were painstakingly reconstructed. For the Plus! themes, I extracted sprite and sound assets directly from the original `.scr` binaries using **[Resource Hacker](http://www.angusj.com/resourcehacker/)**. The animation logic I reconstructed by observation: running the screensavers in the VM, watching recordings of them on YouTube, rebuilding the behavior in HTML/CSS/JS until it matched what I was seeing. Not reverse-engineering the compiled code — more like transcribing a performance.
+98.css and os-gui have their own idea on implementing UI so I had to manually integrate them to work together. os-gui has a theme parsing script that extracts color scheme from a `.theme` file into a set of CSS variables, however os-gui supports limited UI elements. 98.css supports a wider range of UI elements, so I had to improve the theme parsing script to support all UI elements already supported by 98.css.
+
+Another challenge is cursor scheme. You can change static cursor image in CSS using `cursor` property, but applying animated cursor (Windows 98 use `.ani` file format) is another matter entirely. Thankfully  **[ani-cursor](https://github.com/captbaritone/webamp/tree/master/packages/ani-cursor)** library exists, which convert `.ani` file into CSS animation that can be applied to current cursor. I found this library shortly after adding Webamp (Winamp clone) to my Windows 98 recreation. Thanks captbaritone!
+
+Screensavers were also another problem. Windows screensavers are in `.scr` binary format which can't be converted for web directly, so I need to painstakingly reconstruct them. Using **[Resource Hacker](http://www.angusj.com/resourcehacker/)** I can extract sprite and audio assets from the file and recreate the screensaver with them on a HTML page. The recreation part is quite exciting. I cannot reverse engineer the file so I reconstruct them by observation: running the screensavers in the VM, watching recordings of them on YouTube, rebuilding the behavior in the HTML file until it matched what I was seeing.
+
+The rest of the theme elements, sounds and wallpapers are pretty straightforward. I just copy them from VM and convert them into web compatible formats. 
+
+To tie them all up, I created a Desktop Themes program replica of the original program from Windows 98. 
 
 The result is a themes system that fully supports the Windows 95 Plus! themes that shipped as defaults in Windows 98 — correct wallpapers, cursor sets, sounds, and color schemes applied together from a single `.theme` file. Windows 98 Plus! themes are partially supported; there are additional customization targets in those theme files that the current system doesn't yet handle. Users can also upload their own `.theme` files.
 
