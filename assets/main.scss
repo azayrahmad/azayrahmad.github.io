@@ -3,38 +3,44 @@
 ---
 @charset "utf-8";
 
+// Define defaults for font families before importing Minima
+$base-font-family: 'TeX Gyre Heros', Helvetica, Arial, sans-serif !default;
+
 // Font Face Definitions
 @font-face {
   font-family: 'TeX Gyre Heros';
-  src: url('../fonts/texgyreheros-regular.otf') format('opentype');
+  src: url('fonts/texgyreheros-regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'TeX Gyre Heros';
-  src: url('../fonts/texgyreheros-bold.otf') format('opentype');
+  src: url('fonts/texgyreheros-bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'TeX Gyre Termes';
-  src: url('../fonts/texgyretermes-italic.otf') format('opentype');
+  src: url('fonts/texgyretermes-italic.otf') format('opentype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'TeX Gyre Termes';
-  src: url('../fonts/texgyretermes-bolditalic.otf') format('opentype');
+  src: url('fonts/texgyretermes-bolditalic.otf') format('opentype');
   font-weight: bold;
   font-style: italic;
 }
 
+// Import Minima theme styles
+@import "minima";
+
 // Global font styles
 body {
-  font-family: 'TeX Gyre Heros', Helvetica, sans-serif !important;
+  font-family: 'TeX Gyre Heros', Helvetica, sans-serif;
 }
 
 // Italic styles use TeX Gyre Termes
