@@ -6,7 +6,7 @@
     "email": "azayrahmad@gmail.com",
     "phone": "+62 852 1752 0879",
     "url": "https://azayrahmad.github.io",
-    "summary": "Experienced software developer with a proven track record in developing and supporting enterprise software solutions across diverse markets --> Indonesia, Australia, and New Zealand. Demonstrated proficiency in English and collaboration within multinational teams. Strong academic foundation with a master's degree in computer science and experience delivering lectures at universities. Passionate about learning and keeping up with the latest technologies.",
+    "summary": "Experienced software engineer with a decade of experience delivering enterprise SaaS in payroll, HR, and logistics across APAC. Skilled in .NET with recent focus on AI/LLM workflow automation. Experienced in team onboarding and collaborative development, and designing end-to-end solutions that improve compliance and customer efficiency.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -39,15 +39,12 @@
       "url": "https://ntainers.co",
       "startDate": "2024-08-01",
       "location": "Sydney, Australia",
-      "summary": "Maintain and enhance a platform that leverages artificial intelligence to optimize logistics operations, Supply Chain Management (SCM), and Transport Management Systems (TMS).",
+      "summary": "Maintain and enhance a platform that leverages artificial intelligence to optimize logistics operations, Supply Chain Management (SCM), and Transport Management Systems (TMS). Leading the development of AI-driven tools and integrations.",
       "highlights": [
-        "Automated document submissions to integrated TMS using LLM technology",
-        "Developed features facilitating automated integration between clients and freight forwarders/cartage companies",
-        "Developed AI-powered integration platform (Mappr.ai) automating data mapping, transformation, and workflow orchestration",
-        "Fixed bugs and improved AI-powered Workflow Studio for API route generation",
-        "Built AI chat interface add-in (Cargo Chat for Outlook) with Node.JS TypeScript connecting to NTainers.co Cargo Chat service",
-        "Utilized Office JavaScript API and ChatGPT for context-aware email replies in one click",
-        "Performed extensive refactor on Cargo Chat logic and redesigned LLM pipeline --> INCREASED RESPONSE SPEED BY 75%"
+        "Led the development of Cargo Chat for Outlook, an AI-powered add-in for logistics query summarization and response generation.",
+        "Architected and implemented AI-powered integration platforms (Mappr.ai) for automated data mapping and workflow orchestration.",
+        "Integrated LLMs and Document Intelligence into automated data extraction processes within the core logistics platform.",
+        "Redesigned LLM pipeline, increasing response speed by 75%."
       ]
     },
     {
@@ -56,7 +53,7 @@
       "url": "https://primakara.ac.id",
       "startDate": "2022-02-01",
       "location": "Bali, Indonesia",
-      "summary": "Delivering lectures on Computer Science topics.",
+      "summary": "Delivering lectures on Computer Science topics, bridging academic theory with industry best practices.",
       "highlights": [
         "Basics of Programming",
         "Data Structures & Algorithms",
@@ -65,34 +62,94 @@
       ]
     },
     {
-      "name": "Mitrais",
+      "name": "Mitrais (TechnologyOne Corp)",
       "position": "Analyst Programmer",
       "url": "https://www.mitrais.com",
       "startDate": "2017-10-01",
       "endDate": "2024-04-30",
       "location": "Bali, Indonesia",
-      "summary": "Developed high-quality software solutions while collaborating within cross-functional, international agile teams. Tested, debugged, and coordinated with QA to validate software readiness. Reviewed code and provided expertise to junior team members.",
+      "summary": "Developed high-quality software solutions for TechnologyOne's CiAnywhere SaaS, focusing on the HR and Payroll submodule for AU, NZ, and UK markets.",
       "highlights": [
-        "Developed and maintained HRMS product with CI/CD focus",
-        "Acted as Scrum Master on rotation",
-        "Supported client enterprise solutions' HR and Payroll modules for multinational clients",
-        "Implemented Australian STP & STP Phase 2",
-        "Converted project libraries from VB.NET to C#"
+        "Implemented Australian STP & STP Phase 2 compliance requirements.",
+        "Developed Child Support payroll and IRD taxation calculations for New Zealand clients.",
+        "Successfully migrated legacy project libraries from VB.NET to C#.",
+        "Collaborated within cross-functional, international agile teams and assisted in onboarding new members."
       ]
     },
     {
-      "name": "CODE.ID",
+      "name": "CODE.ID (Bank Danamon Indonesia)",
       "position": "Software Consultant",
       "url": "https://code.id",
       "startDate": "2015-11-01",
       "endDate": "2017-10-31",
       "location": "Jakarta, Indonesia",
-      "summary": "Designed, coded, tested, and managed various applications while collaborating with engineering and product teams. Developed automated tests and conducted performance tuning.",
+      "summary": "Designed and managed various banking applications, focusing on tax automation and human resource management systems.",
       "highlights": [
-        "Developed new modules for Tax Automation web application for major Indonesian bank",
-        "Developed new modules for Employee Connection web application",
-        "Notable: Corporate Tax module, Accrual & Prepayment module, Industrial Relations module (manages rule violations and performance records)"
+        "Developed the Corporate Tax module for processing fiscal reports.",
+        "Implemented Accrual & Prepayment modules for complex financial calculations.",
+        "Built the Industrial Relations module for managing employee performance and rule violations."
       ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Cargo Chat for Outlook",
+      "description": "An Outlook add-in that integrates NTainers.co's Cargo Chat AI to summarize shipment emails, answer logistics queries, and generate smart replies directly in the inbox.",
+      "highlights": [
+        "Developed the add-in with Node.JS TypeScript from scratch.",
+        "Developed AI chat interface for NTainers.co Cargo Chat API.",
+        "Utilized Office JavaScript API and ChatGPT to generate email replies in one click.",
+        "Performed extensive refactor on complex Cargo Chat logic by implementing SOLID principles.",
+        "Redesigned LLM pipeline, increasing response speed by 75%."
+      ],
+      "keywords": ["Node.JS", "TypeScript", "MS Office JavaScript API", "Fluent UI", "ChatGPT"],
+      "startDate": "2025-04-01",
+      "url": "https://ntainers.co",
+      "roles": ["Senior Web Developer"],
+      "entity": "NTainers.co Pty Ltd"
+    },
+    {
+      "name": "Mappr.ai",
+      "description": "AI-powered integration platform that automates data mapping, transformation, and workflow orchestration, enabling seamless, no-code system interoperability in real time.",
+      "highlights": [
+        "Bug fixes and improvements on Workflow Studio that generates API routes for data transformation using LLM."
+      ],
+      "keywords": [".NET", "C#", "jQuery", "LLM"],
+      "startDate": "2025-03-01",
+      "endDate": "2025-04-01",
+      "url": "https://ntainers.co",
+      "roles": ["Senior Web Developer"],
+      "entity": "NTainers.co Pty Ltd"
+    },
+    {
+      "name": "NTainers.co Logistics Portal",
+      "description": "AI-powered logistics & supply chain management web portal that integrates with CargoWise TMS.",
+      "highlights": [
+        "Integrated Large Language Models and Document Intelligence into automated data extraction.",
+        "Developed the new Cartage Network Integration feature to facilitate automated integration processes between clients and freight forwarders or cartage companies.",
+        "Developed AI to UI feature that allows complex data to be processed by LLM to generate editable forms.",
+        "Developed Azure Function apps that facilitate AI-powered document extraction automations."
+      ],
+      "keywords": [".NET Core", "C#", "EF Core", "MudBlazor", "Azure Functions"],
+      "startDate": "2024-08-01",
+      "url": "https://ntainers.co",
+      "roles": ["Senior Web Developer"],
+      "entity": "NTainers.co Pty Ltd"
+    },
+    {
+      "name": "CiAnywhere – Human Resources and Payroll",
+      "description": "Human Resource and Payroll submodule of CiAnywhere SaaS, tailored for diverse clients such as Australia, New Zealand, & Great Britain.",
+      "highlights": [
+        "Implemented and maintained various business logic related to Human Resources and Payroll, particularly for Australia and New Zealand payroll and taxation.",
+        "Implemented STP (Single Touch Payroll) & STP Phase 2 for Australian clients.",
+        "Implemented Child Support payroll and IRD taxation calculation for New Zealand clients.",
+        "Upgraded the module from VB.NET-based to C#-based."
+      ],
+      "keywords": ["C#", "VB.NET", "MS SQL Server", "Crystal Reports", "NUnit"],
+      "startDate": "2017-10-01",
+      "endDate": "2024-04-30",
+      "roles": ["Analyst Programmer"],
+      "entity": "TechnologyOne Corp"
     }
   ],
   "education": [
@@ -100,7 +157,7 @@
       "institution": "Bogor Agricultural University",
       "url": "https://ipb.ac.id",
       "area": "Computer Science",
-      "studyType": "Master",
+      "studyType": "Master (Cum Laude)",
       "startDate": "2012-01-01",
       "endDate": "2015-12-31",
       "score": "3.69",
@@ -108,6 +165,14 @@
         "Algorithm Analysis & Design",
         "Advanced Software Development"
       ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Graduated Cum Laude",
+      "date": "2015-12-31",
+      "awarder": "Bogor Agricultural University",
+      "summary": "Achieved with a GPA of 3.69/4.00 in Master of Computer Science."
     }
   ],
   "certificates": [
@@ -162,45 +227,49 @@
   ],
   "skills": [
     {
+      "name": "AI & LLM",
+      "level": "Senior",
+      "keywords": ["LLM Workflow Automation", "ChatGPT API", "Azure Document Intelligence", "Prompt Engineering", "AI-to-UI Generation"]
+    },
+    {
       "name": "Programming",
       "level": "Senior",
-      "keywords": [".NET Frameworks", "C#", "VB.NET", "NodeJS", "TypeScript"]
+      "keywords": [".NET (Core/Framework)", "C#", "NodeJS", "TypeScript", "VB.NET"]
+    },
+    {
+      "name": "Web Technologies",
+      "level": "Senior",
+      "keywords": ["ASP.NET", "MudBlazor", "Fluent UI", "jQuery", "Office JavaScript API"]
     },
     {
       "name": "Databases",
       "level": "Senior",
-      "keywords": ["MS SQL Server", "PostgreSQL", "Oracle"]
+      "keywords": ["MS SQL Server", "PostgreSQL", "Oracle", "Entity Framework Core"]
     },
     {
-      "name": "Tools",
+      "name": "Tools & DevOps",
       "level": "Senior",
-      "keywords": ["Git", "Crystal Report", "SSRS"]
+      "keywords": ["Git/GitFlow", "Docker", "Azure Functions", "Crystal Reports", "SSRS"]
     },
     {
       "name": "Methodologies",
       "level": "Senior",
-      "keywords": ["Agile Methodologies", "Scrum"]
+      "keywords": ["Agile/Scrum", "SOLID Principles", "Software Architecture"]
     },
     {
       "name": "Testing",
       "level": "Senior",
-      "keywords": ["Unit Test", "Regression Test"]
-    },
-    {
-      "name": "Cloud & AI",
-      "level": "Senior",
-      "keywords": ["Azure", "ChatGPT", "Azure Document Intelligence"]
-    },
-    {
-      "name": "UI Frameworks",
-      "level": "Senior",
-      "keywords": ["MudBlazor", "WinForms", "Fluent UI"]
+      "keywords": ["NUnit", "Unit Testing", "Regression Testing"]
     }
   ],
   "languages": [
     {
       "language": "English",
       "fluency": "Professional"
+    },
+    {
+      "language": "Indonesian",
+      "fluency": "Native"
     }
   ]
 }

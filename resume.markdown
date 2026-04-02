@@ -38,7 +38,7 @@ permalink: /resume/
           <span class="job-date">{{ job.startDate | date: "%B %Y" }} - {% if job.endDate %}{{ job.endDate | date: "%B %Y" }}{% else %}Present{% endif %}</span>
         </div>
         <div class="job-company">
-          <a href="{{ job.url }}">{{ job.name }}</a> | {{ job.location }}
+          {% if job.url %}<a href="{{ job.url }}">{% endif %}{{ job.name }}{% if job.url %}</a>{% endif %} | {{ job.location }}
         </div>
         <p class="job-summary">{{ job.summary }}</p>
         <ul class="job-highlights">
@@ -50,6 +50,36 @@ permalink: /resume/
     {% endfor %}
   </section>
 
+  {% if resume.projects %}
+  <section class="resume-section">
+    <h2>Key Projects</h2>
+    {% for project in resume.projects %}
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">{{ project.name | upcase }}</span>
+          <span class="project-date">
+            {{ project.startDate | date: "%b %Y" }}
+            {% if project.endDate %} - {{ project.endDate | date: "%b %Y" }}{% else %} - Present{% endif %}
+          </span>
+        </div>
+        <div class="project-entity">
+          {% if project.entity %}<em>{{ project.entity }}</em>{% endif %}
+          {% if project.roles %} | {{ project.roles | join: ", " }}{% endif %}
+        </div>
+        <p class="project-description">{{ project.description }}</p>
+        <ul class="project-highlights">
+          {% for highlight in project.highlights %}
+            <li>{{ highlight }}</li>
+          {% endfor %}
+        </ul>
+        {% if project.keywords %}
+          <p class="project-keywords"><strong>Technologies:</strong> {{ project.keywords | join: ", " }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
   <section class="resume-section">
     <h2>Education</h2>
     {% for edu in resume.education %}
@@ -59,7 +89,7 @@ permalink: /resume/
           <span class="edu-date">{{ edu.startDate | date: "%Y" }} - {{ edu.endDate | date: "%Y" }}</span>
         </div>
         <div class="edu-school">
-          <a href="{{ edu.url }}">{{ edu.institution }}</a>
+          {% if edu.url %}<a href="{{ edu.url }}">{% endif %}{{ edu.institution }}{% if edu.url %}</a>{% endif %}
         </div>
         {% if edu.score %}
           <p class="edu-score">GPA: {{ edu.score }}/4.00</p>
@@ -73,6 +103,20 @@ permalink: /resume/
     {% endfor %}
   </section>
 
+  {% if resume.awards %}
+  <section class="resume-section">
+    <h2>Awards & Honors</h2>
+    <ul class="awards">
+      {% for award in resume.awards %}
+        <li>
+          <strong>{{ award.title }}</strong> - {{ award.awarder }} ({{ award.date | date: "%Y" }})
+          <p>{{ award.summary }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   <section class="resume-section">
     <h2>Technical Skills</h2>
     <div class="skills-grid">
@@ -83,6 +127,17 @@ permalink: /resume/
       {% endfor %}
     </div>
   </section>
+
+  {% if resume.languages %}
+  <section class="resume-section">
+    <h2>Languages</h2>
+    <ul class="languages">
+      {% for lang in resume.languages %}
+        <li><strong>{{ lang.language }}:</strong> {{ lang.fluency }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 
   <section class="resume-section">
     <h2>Certifications</h2>
@@ -104,10 +159,11 @@ permalink: /resume/
   .resume-header .label { font-size: 1.2rem; font-weight: bold; color: #666; }
   .resume-section { margin-bottom: 2rem; }
   .resume-section h2 { border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; text-transform: uppercase; font-size: 1.2rem; }
-  .job, .education { margin-bottom: 1.5rem; }
-  .job-header, .edu-header { display: flex; justify-content: space-between; font-weight: bold; }
-  .job-company, .edu-school { font-style: italic; color: #555; margin-bottom: 0.5rem; }
-  .job-highlights, .edu-courses { margin-top: 0.5rem; }
+  .job, .education, .project { margin-bottom: 1.5rem; }
+  .job-header, .edu-header, .project-header { display: flex; justify-content: space-between; font-weight: bold; }
+  .job-company, .edu-school, .project-entity { font-style: italic; color: #555; margin-bottom: 0.5rem; }
+  .job-highlights, .edu-courses, .project-highlights { margin-top: 0.5rem; }
+  .project-keywords { font-size: 0.9rem; color: #444; }
   .skill-category { margin-bottom: 0.5rem; }
   .resume-footer { margin-top: 3rem; text-align: center; border-top: 1px solid #eee; padding-top: 1rem; }
 </style>
