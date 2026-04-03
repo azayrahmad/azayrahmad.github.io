@@ -110,6 +110,13 @@
         "Developed automated unit training logic for town centers and barracks.",
         "Collaborated with core developers to ensure feature alignment with game balance."
       ]
+    },
+    {
+      "organization": "YKIP",
+      "position": "English Translator & Proofreader",
+      "startDate": "2023-11-01",
+      "endDate": "2023-11-30",
+      "summary": "Translated and proofread students' gratitude letters to their donors."
     }
   ],
   "projects": [
@@ -204,50 +211,43 @@
     {
       "name": "Node.js Essential Training",
       "date": "2024-07-01",
-      "issuer": "LinkedIn",
-      "url": ""
+      "issuer": "LinkedIn"
     },
     {
       "name": "Career Essentials in GitHub Professional",
       "date": "2024-06-01",
-      "issuer": "GitHub",
-      "url": ""
+      "issuer": "GitHub"
     },
     {
       "name": "Docker Foundations Professional",
       "date": "2024-06-01",
       "issuer": "Docker",
-      "url": ""
+      "url": "https://www.linkedin.com/learning/certificates/10a1d94377b094671e5879c5168ad89d435a3649f699ead5cd445cbc156e1b3f"
     },
     {
       "name": "Foundational C#",
       "date": "2024-05-01",
-      "issuer": "Microsoft",
-      "url": ""
+      "issuer": "Microsoft"
     },
     {
       "name": "C# (Basic)",
       "date": "2024-05-01",
-      "issuer": "HackerRank",
-      "url": ""
+      "issuer": "HackerRank"
     },
     {
       "name": "SQL (Basic)",
       "date": "2024-05-01",
-      "issuer": "HackerRank",
-      "url": ""
+      "issuer": "HackerRank"
     },
     {
       "name": "EF SET C2/Proficient",
       "date": "2024-05-01",
-      "issuer": "English First",
-      "url": ""
+      "issuer": "English First"
     },
     {
       "name": "Analyst Programmer Certification Program (APCP)",
       "date": "2022-01-01",
-      "issuer": "Mitrais",
-      "url": ""
+      "issuer": "Mitrais"
     }
   ],
   "publications": [
