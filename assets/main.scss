@@ -3,38 +3,48 @@
 ---
 @charset "utf-8";
 
+// Define defaults for font families before importing Minima
+$base-font-family: 'TeX Gyre Heros', Helvetica, Arial, sans-serif;
+
 // Font Face Definitions
 @font-face {
   font-family: 'TeX Gyre Heros';
-  src: url('../fonts/texgyreheros-regular.otf') format('opentype');
+  src: url('/assets/fonts/texgyreheros-regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'TeX Gyre Heros';
-  src: url('../fonts/texgyreheros-bold.otf') format('opentype');
+  src: url('/assets/fonts/texgyreheros-bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'TeX Gyre Termes';
-  src: url('../fonts/texgyretermes-italic.otf') format('opentype');
+  src: url('/assets/fonts/texgyretermes-italic.otf') format('opentype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'TeX Gyre Termes';
-  src: url('../fonts/texgyretermes-bolditalic.otf') format('opentype');
+  src: url('/assets/fonts/texgyretermes-bolditalic.otf') format('opentype');
   font-weight: bold;
   font-style: italic;
 }
 
+// Import Minima theme styles
+@import "minima";
+
 // Global font styles
-body {
-  font-family: 'TeX Gyre Heros', Helvetica, sans-serif !important;
+html, body {
+  font-family: 'TeX Gyre Heros', Helvetica, Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .site-title, .page-link {
+  font-family: 'TeX Gyre Heros', Helvetica, Arial, sans-serif !important;
 }
 
 // Italic styles use TeX Gyre Termes
@@ -52,13 +62,13 @@ em strong, em b, i strong, i b, strong em, strong i, b em, b i {
 
 // Regular bold uses Heros Bold
 strong, b {
-  font-family: 'TeX Gyre Heros', Helvetica, sans-serif !important;
+  font-family: 'TeX Gyre Heros', Helvetica, Arial, sans-serif !important;
   font-weight: bold !important;
 }
 
 // Resume-specific overrides to ensure consistency
 .resume {
-  font-family: 'TeX Gyre Heros', Helvetica, sans-serif;
+  font-family: 'TeX Gyre Heros', Helvetica, Arial, sans-serif;
 
   .job-company, .edu-school, .project-entity, .pub-publisher, .vol-position, .job-company-desc em {
     font-family: 'TeX Gyre Termes', 'EB Garamond', serif !important;
